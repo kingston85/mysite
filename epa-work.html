@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPA Work | Sahr Emmanuel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Color variables */
+        :root {
+            --primary-color: #2c6e49;
+            --secondary-color: #4c956c;
+            --accent-color: #d68c45;
+            --light-color: #f2e8cf;
+            --dark-color: #333;
+            --white-color: #fff;
+            --epa-blue: #0071bc;
+            --epa-dark-blue: #205493;
+        }
+
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fafafa;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .epa-btn {
+            background: var(--epa-blue);
+        }
+
+        .epa-btn:hover {
+            background: var(--epa-dark-blue);
+        }
+
+        /* Header styles */
+        header {
+            background-color: var(--white-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--light-color);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Page header */
+        .page-header {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/epa-background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--epa-blue);
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* EPA Role Section */
+        .role-section {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .role-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .role-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .role-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--epa-blue);
+        }
+
+        .role-content p {
+            margin-bottom: 20px;
+        }
+
+        /* ERRS Department Section */
+        .department-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 2rem;
+            color: var(--epa-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--dark-color);
+        }
+
+        .department-info {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+
+        .department-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--epa-blue);
+        }
+
+        .department-info p {
+            margin-bottom: 20px;
+        }
+
+        .department-responsibilities {
+            margin-top: 30px;
+        }
+
+        .department-responsibilities h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--epa-blue);
+        }
+
+        .responsibilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .responsibility-item {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .responsibility-item i {
+            font-size: 2rem;
+            color: var(--epa-blue);
+            margin-bottom: 15px;
+        }
+
+        .responsibility-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .projects-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 12px 25px;
+            background-color: var(--white-color);
+            border: none;
+            margin: 0 10px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            background-color: var(--epa-dark-blue);
+            color: var(--white-color);
+        }
+
+        .tab-button.active {
+            background-color: var(--epa-blue);
+            color: var(--white-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .project-card {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5
+border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--epa-blue);
+        }
+
+        .project-header {
+            background-color: var(--light-color);
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--epa-blue);
+        }
+
+        .project-location {
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-description {
+            margin-bottom: 20px;
+        }
+
+        .project-details {
+            margin-bottom: 20px;
+        }
+
+        .project-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--epa-blue);
+        }
+
+        .project-details ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .project-details ul li {
+            margin-bottom: 8px;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            height: 120px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Technical Expertise Section */
+        .expertise-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .expertise-card {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .expertise-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--epa-blue);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .expertise-icon i {
+            font-size: 2rem;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--epa-blue);
+            text-align: center;
+        }
+
+        .expertise-list {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .expertise-list li {
+            margin-bottom: 10px;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background-color: var(--epa-blue);
+            color: var(--white-color);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+        }
+
+        .impact-stories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .story-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .story-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .story-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--epa-blue);
+        }
+
+        .story-text {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Policy Section */
+        .policy-section {
+            padding: 80px 0;
+            background-color: var(--epa-blue);
+            color: var(--white-color);
+        }
+
+        .policy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .policy-list {
+            margin-top: 30px;
+        }
+
+        .policy-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .policy-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Resources Section */
+        .resources-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .resource-card {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .resource-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--epa-blue);
+            color: var(--white-color);
+        }
+
+        .resource-icon i {
+            font-size: 3rem;
+        }
+
+        .resource-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--epa-blue);
+        }
+
+        .resource-description {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .resource-link {
+            margin-top: auto;
+        }
+
+        /* Contact CTA Section */
+        .contact-cta {
+            padding: 80px 0;
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-container p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .white-btn {
+            display: inline-block;
+            background: var(--white-color);
+            color: var(--epa-blue);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .white-btn:hover {
+            background: var(--light-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            padding: 40px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--light-color);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--white-color);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--white-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white-color);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                padding: 20px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .role-container {
+                grid-template-columns: 1fr;
+            }
+
+            .role-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Sahr Emmanuel</div>
+                <button class="mobile-nav-toggle" id="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="teaching.html">Teaching</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="epa-work.html">EPA Work</a></li>
+                    <li><a href="faith.html">Faith</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>EPA Liberia Work</h1>
+            <p>Contributing to environmental protection and chemical remediation in Liberia</p>
+        </div>
+    </section>
+
+    <!-- Role Section -->
+    <section class="role-section">
+        <div class="container role-container">
+            <div class="role-content">
+                <h2>My Role as Chemical Remediation Analyst</h2>
+                <p>As a Chemical Remediation Analyst in the Emergency Response and Remediation Services (ERRS) Department at the Environmental Protection Agency of Liberia, I contribute to national efforts to address chemical contamination and hazardous substances that pose risks to human health and the environment.</p>
+                
+                <p>My work involves identifying, assessing, and developing remediation strategies for sites contaminated with petroleum products, heavy metals, pesticides, and other hazardous chemicals. I conduct field investigations, analyze environmental samples, and recommend appropriate cleanup methodologies based on scientific principles and regulatory requirements.</p>
+                
+                <p>This role allows me to apply my academic knowledge in environmental science and chemical engineering to real-world environmental challenges. I work closely with interdisciplinary teams, local communities, and government stakeholders to implement effective solutions that protect public health and restore environmental quality.</p>
+                
+                <p>My position bridges scientific expertise with practical application, allowing me to contribute directly to Liberia's environmental protection efforts while also informing my research and teaching with relevant, real-world experience.</p>
+            </div>
+            <div class="role-image">
+                <img src="images/epa-role.jpg" alt="Working at Environmental Protection Agency">
+            </div>
+        </div>
+    </section>
+
+    <!-- ERRS Department Section -->
+    <section class="department-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>The ERRS Department</h2>
+                <p>Understanding the critical role of Emergency Response and Remediation Services at EPA Liberia</p>
+            </div>
+
+            <div class="department-info">
+                <h3>About the Department</h3>
+                <p>The Emergency Response and Remediation Services (ERRS) Department is a specialized unit within the Environmental Protection Agency of Liberia that focuses on addressing environmental emergencies and implementing remediation actions for contaminated sites. The department plays a crucial role in protecting public health and the environment from acute and chronic hazards associated with chemical releases and pollution incidents.</p>
+
+                <p>ERRS serves as the primary responder to environmental emergencies such as oil spills, chemical releases, and hazardous material incidents throughout Liberia. The department also manages long-term remediation projects for contaminated sites, working to restore environmental quality and reduce risks to nearby communities.</p>
+
+                <div class="department-responsibilities">
+                    <h3>Key Responsibilities</h3>
+                    <div class="responsibilities-grid">
+                        <div class="responsibility-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h4>Emergency Response</h4>
+                            <p>Responding to environmental emergencies and containing hazardous material releases</p>
+                        </div>
+
+                        <div class="responsibility-item">
+                            <i class="fas fa-vial"></i>
+                            <h4>Site Assessment</h4>
+                            <p>Evaluating contaminated sites to determine the extent and nature of pollution</p>
+                        </div>
+
+                        <div class="responsibility-item">
+                            <i class="fas fa-flask"></i>
+                            <h4>Remediation Planning</h4>
+                            <p>Developing cleanup strategies based on site characteristics and contamination type</p>
+                        </div>
+
+                        <div class="responsibility-item">
+                            <i class="fas fa-hard-hat"></i>
+                            <h4>Cleanup Oversight</h4>
+                            <p>Managing remediation projects and ensuring compliance with environmental standards</p>
+                        </div>
+
+                        <div class="responsibility-item">
+                            <i class="fas fa-users"></i>
+                            <h4>Community Engagement</h4>
+                            <p>Informing and involving local communities in the remediation process</p>
+                        </div>
+
+                        <div class="responsibility-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Monitoring & Evaluation</h4>
+                            <p>Assessing the effectiveness of remediation efforts over time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Key Projects</h2>
+                <p>Significant remediation initiatives and environmental response work</p>
+            </div>
+
+            <div class="projects-tabs">
+                <button class="tab-button active" onclick="openTab(event, 'ongoing')">Ongoing Projects</button>
+                <button class="tab-button" onclick="openTab(event, 'completed')">Completed Projects</button>
+                <button class="tab-button" onclick="openTab(event, 'planned')">Planned Initiatives</button>
+            </div>
+
+            <!-- Ongoing Projects Tab -->
+            <div id="ongoing" class="tab-content active">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Petroleum Contamination Remediation at Old Port Facility</h3>
+                        <p class="project-location">Monrovia Harbor Area</p>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">This project addresses historical petroleum contamination at a former port facility that operated without adequate environmental controls. Soil and groundwater assessments revealed significant hydrocarbon contamination that poses risks to nearby communities and marine environments.</p>
+                        
+                        <div class="project-details">
+                            <h4>Current Activities:</h4>
+                            <ul>
+                                <li>Implementation of bioremediation techniques for contaminated soil</li>
+                                <li>Installation of groundwater monitoring wells to track contamination plume</li>
+                                <li>Application of oxygen-releasing compounds to enhance natural attenuation</li>
+                                <li>Community education program about site risks and remediation process</li>
+                            </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Engagement</h3>
+                    <ul class="expertise-list">
+                        <li>Risk communication strategies</li>
+                        <li>Public meeting facilitation</li>
+                        <li>Development of educational materials</li>
+                        <li>Stakeholder consultation processes</li>
+                        <li>Community-based monitoring programs</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Field Operations</h3>
+                    <ul class="expertise-list">
+                        <li>Site investigation techniques</li>
+                        <li>Personal protective equipment selection and use</li>
+                        <li>Field screening with portable instruments</li>
+                        <li>Hazardous materials handling</li>
+                        <li>Emergency response procedures</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Regulatory Knowledge</h3>
+                    <ul class="expertise-list">
+                        <li>Liberian environmental laws and regulations</li>
+                        <li>International chemical management conventions</li>
+                        <li>Environmental quality standards</li>
+                        <li>Compliance assessment procedures</li>
+                        <li>Environmental impact assessment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Environmental Impact</h2>
+                <p>Measurable outcomes and positive changes from our remediation efforts</p>
+            </div>
+
+            <div class="impact-stats">
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Contaminated sites assessed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Remediation projects completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Hectares of land restored</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Community members protected</div>
+                </div>
+            </div>
+
+            <div class="impact-stories">
+                <div class="story-card">
+                    <div class="story-image" style="background-image: url('images/impact-story1.jpg');"></div>
+                    <div class="story-content">
+                        <h3 class="story-title">Restoring Safe Water Access</h3>
+                        <p class="story-text">In a community near a former industrial site, groundwater contamination had rendered local wells unsafe for drinking. Through targeted remediation efforts, including pump-and-treat technology and natural attenuation enhancement, we successfully reduced contaminant levels to below health standards. Today, the community once again has access to safe drinking water from their local sources.</p>
+                        <a href="#" class="btn epa-btn">Read Full Story</a>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image" style="background-image: url('images/impact-story2.jpg');"></div>
+                    <div class="story-content">
+                        <h3 class="story-title">From Waste Site to Community Garden</h3>
+                        <p class="story-text">A former waste disposal area in an urban neighborhood has been transformed into a productive community garden following comprehensive soil remediation. Using a combination of soil removal, bioremediation, and soil amendments, the site now produces nutritious vegetables for local residents. Regular monitoring confirms the produce is safe for consumption, providing both food security and environmental restoration.</p>
+                        <a href="#" class="btn epa-btn">Read Full Story</a>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-image" style="background-image: url('images/impact-story3.jpg');"></div>
+                    <div class="story-content">
+                        <h3 class="story-title">Emergency Response Prevents Coastal Damage</h3>
+                        <p class="story-text">When a coastal fuel storage facility experienced a significant leak, our rapid response team contained the spill before it reached sensitive marine ecosystems. Using containment booms, skimmers, and bioremediation agents, we removed the petroleum products and treated affected soil and water. Subsequent monitoring has shown no long-term impacts to local fisheries, preserving both environmental resources and local livelihoods.</p>
+                        <a href="#" class="btn epa-btn">Read Full Story</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Section -->
+    <section class="policy-section">
+        <div class="container">
+            <div class="policy-content">
+                <div class="section-heading">
+                    <h2>Policy Contributions</h2>
+                    <p>Supporting the development of environmental protection frameworks in Liberia</p>
+                </div>
+
+                <div class="policy-list">
+                    <div class="policy-item">
+                        <h3>Chemical Management Guidelines</h3>
+                        <p>Contributed to the development of national guidelines for safe chemical storage, handling, and disposal, providing technical input on remediation standards and monitoring protocols. These guidelines now serve as a reference for industries and businesses throughout Liberia.</p>
+                    </div>
+
+                    <div class="policy-item">
+                        <h3>Soil Quality Standards</h3>
+                        <p>Participated in the technical working group establishing Liberia's first comprehensive soil quality standards, helping define appropriate thresholds for various contaminants based on land use categories and human health protection.</p>
+                    </div>
+
+                    <div class="policy-item">
+                        <h3>Emergency Response Protocols</h3>
+                        <p>Assisted in drafting standardized protocols for environmental emergency response, ensuring consistent, effective approaches to chemical spills and releases across different regions of the country.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Public Resources</h2>
+                <p>Educational materials and tools for environmental protection</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Chemical Safety Guide</h3>
+                        <p class="resource-description">A comprehensive guide for households and small businesses on safely handling, storing, and disposing of common chemicals. Includes information on identifying hazardous materials and preventing contamination.</p>
+                        <div class="resource-link">
+                            <a href="#" class="btn epa-btn">Download Guide</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Contamination Reporting Tool</h3>
+                        <p class="resource-description">An online platform for citizens to report suspected chemical spills, illegal dumping, or environmental contamination. Includes a mobile-friendly interface and option for anonymous reporting.</p>
+                        <div class="resource-link">
+                            <a href="#" class="btn epa-btn">Access Tool</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Environmental Quality Map</h3>
+                        <p class="resource-description">Interactive map showing environmental quality data across Liberia, including water quality monitoring results, remediation sites, and areas with environmental concerns. Updated quarterly with new monitoring data.</p>
+                        <div class="resource-link">
+                            <a href="#" class="btn epa-btn">View Map</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">School Education Kit</h3>
+                        <p class="resource-description">Educational materials designed for primary and secondary schools, teaching students about environmental protection, chemical safety, and the importance of remediation efforts. Includes lesson plans and activities.</p>
+                        <div class="resource-link">
+                            <a href="#" class="btn epa-btn">Download Kit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta">
+        <div class="container contact-container">
+            <h2>Work With Us on Environmental Protection</h2>
+            <p>Whether you're reporting a potential contamination issue, seeking information about remediation in your community, or exploring collaboration opportunities, we're here to help.</p>
+            <a href="contact.html" class="white-btn">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Sahr Emmanuel</h3>
+                    <p>Lecturer, Researcher, Environmental Specialist</p>
+                    <p>University of Liberia & Environmental Protection Agency</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="teaching.html">Teaching</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: esahr37@gmail.com</p>
+                    <p>Phone: +231 881 650 202</p>
+                    <p>Office: University of Liberia, Monrovia</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                        <a href="#"><i class="fab fa-google-scholar"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sahr Emmanuel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        document.getElementById('mobile-nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('show');
+        });
+
+        // Projects tabs functionality
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>>
+                        </div>
+                        
+                        <div class="project-details">
+                            <h4>My Role:</h4>
+                            <ul>
+                                <li>Leading site characterization and contaminant delineation</li>
+                                <li>Designing bioremediation approach based on site-specific conditions</li>
+                                <li>Conducting regular monitoring of remediation effectiveness</li>
+                                <li>Coordinating with laboratory for analysis of environmental samples</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-gallery">
+                            <div class="gallery-item">
+                                <img src="images/port-site1.jpg" alt="Port remediation site">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/port-site2.jpg" alt="Soil sampling">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/port-site3.jpg" alt="Monitoring well installation">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Heavy Metal Assessment and Remediation Program</h3>
+                        <p class="project-location">Former Mining Areas, Bomi County</p>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">This comprehensive project addresses heavy metal contamination in soil and water sources near abandoned mining operations. Initial assessments identified elevated levels of lead, arsenic, and mercury that pose significant health risks to surrounding communities who use local water sources and grow crops in the affected areas.</p>
+                        
+                        <div class="project-details">
+                            <h4>Current Activities:</h4>
+                            <ul>
+                                <li>Detailed mapping of contamination extent through systematic soil and water sampling</li>
+                                <li>Implementation of soil stabilization techniques to reduce metal mobility</li>
+                                <li>Installation of filtration systems for community water supplies</li>
+                                <li>Development of safe agricultural practices for affected areas</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-details">
+                            <h4>My Role:</h4>
+                            <ul>
+                                <li>Designing sampling protocols for heavy metal assessment</li>
+                                <li>Evaluating remediation options based on contamination profiles</li>
+                                <li>Coordinating with international experts on metal stabilization techniques</li>
+                                <li>Leading community education on exposure reduction measures</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-gallery">
+                            <div class="gallery-item">
+                                <img src="images/mining-site1.jpg" alt="Mining area remediation">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/mining-site2.jpg" alt="Water sampling">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/mining-site3.jpg" alt="Community meeting">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed Projects Tab -->
+            <div id="completed" class="tab-content">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Chemical Storage Facility Cleanup</h3>
+                        <p class="project-location">Industrial Area, Monrovia</p>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">This emergency response and remediation project addressed an abandoned chemical storage facility containing deteriorating containers of industrial chemicals. The site posed acute health and safety risks to nearby workers and residents, requiring immediate action to secure and clean up the hazardous materials.</p>
+                        
+                        <div class="project-details">
+                            <h4>Completed Activities:</h4>
+                            <ul>
+                                <li>Inventory and assessment of all stored chemicals and their condition</li>
+                                <li>Secure containment and safe removal of high-risk materials</li>
+                                <li>Soil remediation for areas affected by chemical leakage</li>
+                                <li>Site restoration and implementation of monitoring program</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-details">
+                            <h4>Outcomes:</h4>
+                            <ul>
+                                <li>Safe removal of over 500 containers of hazardous chemicals</li>
+                                <li>Remediation of 3 acres of contaminated soil</li>
+                                <li>Elimination of groundwater contamination risk</li>
+                                <li>Redevelopment of site for safe industrial use</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-gallery">
+                            <div class="gallery-item">
+                                <img src="images/chemical-site1.jpg" alt="Chemical facility before cleanup">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/chemical-site2.jpg" alt="Remediation in progress">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/chemical-site3.jpg" alt="Completed site restoration">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Pesticide-Contaminated Soil Remediation</h3>
+                        <p class="project-location">Agricultural District, Nimba County</p>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">This project addressed soil contamination from improper pesticide storage and disposal at a former agricultural supply center. Persistent organic pesticides had leached into surrounding soil, creating risks for local food production and community health.</p>
+                        
+                        <div class="project-details">
+                            <h4>Completed Activities:</h4>
+                            <ul>
+                                <li>Comprehensive soil testing to map contamination extent and concentration</li>
+                                <li>Implementation of bioremediation techniques using native microorganisms</li>
+                                <li>Application of phytoremediation with appropriate plant species</li>
+                                <li>Community education on safe agricultural practices</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-details">
+                            <h4>Outcomes:</h4>
+                            <ul>
+                                <li>Reduction of pesticide concentrations to below regulatory thresholds</li>
+                                <li>Restoration of 5 hectares of agricultural land</li>
+                                <li>Development of local capacity for ongoing monitoring</li>
+                                <li>Creation of model for similar sites throughout Liberia</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-gallery">
+                            <div class="gallery-item">
+                                <img src="images/pesticide-site1.jpg" alt="Contaminated agricultural land">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/pesticide-site2.jpg" alt="Phytoremediation implementation">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="images/pesticide-site3.jpg" alt="Restored agricultural area">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Planned Initiatives Tab -->
+            <div id="planned" class="tab-content">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">National Chemical Site Inventory and Risk Assessment</h3>
+                        <p class="project-location">Nationwide Initiative</p>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">This upcoming initiative aims to create a comprehensive inventory of sites with potential chemical contamination across Liberia. The project will develop a risk-based prioritization system to guide future remediation efforts and preventive measures.</p>
+                        
+                        <div class="project-details">
+                            <h4>Planned Activities:</h4>
+                            <ul>
+                                <li>Development of nationwide database of potential contamination sites</li>
+                                <li>Initial screening assessments of identified locations</li>
+                                <li>Risk classification based on contaminant types, exposure pathways, and receptor vulnerability</li>
+                                <li>Creation of strategic remediation plan with prioritized interventions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-details">
+                            <h4>Expected Outcomes:</h4>
+                            <ul>
+                                <li>Comprehensive national database of contaminated and potentially contaminated sites</li>
+                                <li>Risk-based prioritization framework for future remediation efforts</li>
+                                <li>Enhanced capacity for preventive chemical management</li>
+                                <li>Improved allocation of remediation resources based on risk profiles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Community-Based Environmental Monitoring Network</h3>
+                        <p class="project-location">Pilot in Montserrado and Bomi Counties</p>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">This innovative initiative will establish a network of community-based environmental monitors equipped with basic testing tools and training to serve as early warning systems for chemical contamination and environmental degradation. The project aims to extend EPA's monitoring capacity while empowering local communities.</p>
+                        
+                        <div class="project-details">
+                            <h4>Planned Activities:</h4>
+                            <ul>
+                                <li>Selection and training of community environmental monitors</li>
+                                <li>Development of simplified testing protocols and reporting systems</li>
+                                <li>Distribution of basic water and soil testing kits</li>
+                                <li>Establishment of communication channels between monitors and EPA</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-details">
+                            <h4>Expected Outcomes:</h4>
+                            <ul>
+                                <li>Enhanced early detection of chemical releases and contamination</li>
+                                <li>Broader geographic coverage of environmental monitoring</li>
+                                <li>Increased community awareness and involvement in environmental protection</li>
+                                <li>More rapid response to emerging environmental threats</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Expertise Section -->
+    <section class="expertise-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Technical Expertise</h2>
+                <p>Specialized skills and knowledge applied in my EPA role</p>
+            </div>
+
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Chemical Analysis</h3>
+                    <ul class="expertise-list">
+                        <li>Field screening methods for contaminants</li>
+                        <li>Sample collection and preservation protocols</li>
+                        <li>Interpretation of laboratory analytical results</li>
+                        <li>Quality assurance and quality control procedures</li>
+                        <li>Contaminant fate and transport modeling</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Remediation Technologies</h3>
+                    <ul class="expertise-list">
+                        <li>Bioremediation techniques for organic contaminants</li>
+                        <li>Chemical stabilization of heavy metals</li>
+                        <li>Soil vapor extraction systems</li>
+                        <li>Phytoremediation approaches</li>
+                        <li>In-situ and ex-situ treatment methods</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Risk Assessment</h3>
+                    <ul class="expertise-list">
+                        <li>Human health risk evaluation</li>
+                        <li>Ecological risk assessment</li>
+                        <li>Exposure pathway analysis</li>
+                        <li>Risk-based remediation goal setting</li>
+                        <li>Uncertainty analysis in risk calculations</li>
+                    </ul<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPA Work | Sahr Emmanuel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Color variables */
+        :root {
+            --primary-color: #2c6e49;
+            --secondary-color: #4c956c;
+            --accent-color: #d68c45;
+            --light-color: #f2e8cf;
+            --dark-color: #333;
+            --white-color: #fff;
+            --epa-blue: #0071bc;
+            --epa-dark-blue: #205493;
+        }
+
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fafafa;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .epa-btn {
+            background: var(--epa-blue);
+        }
+
+        .epa-btn:hover {
+            background: var(--epa-dark-blue);
+        }
+
+        /* Header styles */
+        header {
+            background-color: var(--white-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--light-color);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Page header */
+        .page-header {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/epa-background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--epa-blue);
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* EPA Role Section */
+        .role-section {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .role-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .role-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .role-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--epa-blue);
+        }
+
+        .role-content p {
+            margin-bottom: 20px;
+        }
+
+        /* ERRS Department Section */
+        .department-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 2rem;
+            color: var(--epa-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--dark-color);
+        }
+
+        .department-info {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+
+        .department-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--epa-blue);
+        }
+
+        .department-info p {
+            margin-bottom: 20px;
+        }
+
+        .department-responsibilities {
+            margin-top: 30px;
+        }
+
+        .department-responsibilities h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--epa-blue);
+        }
+
+        .responsibilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .responsibility-item {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .responsibility-item i {
+            font-size: 2rem;
+            color: var(--epa-blue);
+            margin-bottom: 15px;
+        }
+
+        .responsibility-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .projects-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 12px 25px;
+            background-color: var(--white-color);
+            border: none;
+            margin: 0 10px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+
+        .tab-button:hover {
+            background-color: var(--epa-dark-blue);
+            color: var(--white-color);
+        }
+
+        .tab-button.active {
+            background-color: var(--epa-blue);
+            color: var(--white-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .project-card {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5
