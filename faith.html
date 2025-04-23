@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faith & Reflections | Sahr Emmanuel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Color variables */
+        :root {
+            --primary-color: #2c6e49;
+            --secondary-color: #4c956c;
+            --accent-color: #d68c45;
+            --light-color: #f2e8cf;
+            --dark-color: #333;
+            --white-color: #fff;
+            --faith-primary: #3c6e91;
+            --faith-secondary: #628cb6;
+        }
+
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fafafa;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .faith-btn {
+            background: var(--faith-primary);
+        }
+
+        .faith-btn:hover {
+            background: var(--faith-secondary);
+        }
+
+        /* Header styles */
+        header {
+            background-color: var(--white-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--faith-primary);
+        }
+
+        .faith-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Scripture section */
+        .scripture-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .scriptures {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .scripture-card {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .scripture-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--faith-primary);
+            line-height: 1.8;
+        }
+
+        .scripture-reference {
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .scripture-reflection {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: left;
+        }
+
+        /* Faith and Environment Section */
+        .faith-environment {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .principle-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .principle-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--faith-primary);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .principle-icon i {
+            font-size: 2rem;
+        }
+
+        .principle-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--faith-primary);
+            text-align: center;
+        }
+
+        .principle-card p {
+            text-align: center;
+        }
+
+        /* Reflections section */
+        .reflections-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .reflections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .reflection-card {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reflection-header {
+            background-color: var(--faith-primary);
+            padding: 20px;
+            color: var(--white-color);
+        }
+
+        .reflection-title {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .reflection-date {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .reflection-content {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .reflection-preview {
+            margin-bottom: 20px;
+        }
+
+        .reflection-footer {
+            padding: 0 25px 25px;
+        }
+
+        /* Recommended readings */
+        .readings-section {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .readings-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .book-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .book-cover {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .book-details {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--faith-primary);
+        }
+
+        .book-author {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .book-description {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Community section */
+        .community-section {
+            padding: 80px 0;
+            background-color: var(--faith-primary);
+            color: var(--white-color);
+            text-align: center;
+        }
+
+        .community-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .community-container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .community-container p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .white-btn {
+            display: inline-block;
+            background: var(--white-color);
+            color: var(--faith-primary);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .white-btn:hover {
+            background: var(--light-color);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            padding: 40px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--light-color);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--white-color);
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--white-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white-color);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                padding: 20px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .faith-container {
+                grid-template-columns: 1fr;
+            }
+
+            .faith-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Sahr Emmanuel</div>
+                <button class="mobile-nav-toggle" id="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="teaching.html">Teaching</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="epa-work.html">EPA Work</a></li>
+                    <li><a href="faith.html">Faith</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Faith & Reflections</h1>
+            <p>Exploring the intersection of Christian faith, environmental stewardship, and professional work</p>
+        </div>
+    </section>
+
+    <!-- Faith Intro Section -->
+    <section class="faith-intro">
+        <div class="container faith-container">
+            <div class="faith-content">
+                <h2>My Faith Journey</h2>
+                <p>My Christian faith forms the foundation of my identity and provides the moral compass that guides both my personal and professional life. As a believer, I view environmental stewardship not merely as a professional obligation but as a sacred responsibility to care for God's creation.</p>
+                
+                <p>Growing up in Liberia, I witnessed firsthand both the beauty of our natural environment and the challenges that arise when we fail to properly steward these resources. My journey of faith has helped me understand that protecting our environment is both spiritually fulfilling and vital for the wellbeing of communities.</p>
+                
+                <p>As a father to my son Augustine, I strive to model values of responsibility, care, and respect for God's creation. I believe that intergenerational equity—ensuring that future generations inherit a healthy planet—is both an environmental principle and a Christian value.</p>
+                
+                <p>On this page, I share reflections on how my faith informs my approach to environmental science, teaching, and public service. These personal thoughts represent my ongoing journey to integrate spiritual values with professional practice.</p>
+            </div>
+            <div class="faith-image">
+                <img src="images/faith-journey.jpg" alt="Faith and Environmental Stewardship">
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripture Section -->
+    <section class="scripture-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Guiding Scriptures</h2>
+                <p>Biblical passages that inspire my approach to environmental stewardship</p>
+            </div>
+
+            <div class="scriptures">
+                <div class="scripture-card">
+                    <p class="scripture-text">"The Lord God took the man and put him in the Garden of Eden to work it and take care of it."</p>
+                    <p class="scripture-reference">Genesis 2:15</p>
+                    <div class="scripture-reflection">
+                        <p>This passage establishes humanity's original mandate to care for creation. The Hebrew words for "work" and "take care" imply both cultivation and protection. As environmental professionals, we continue this sacred task of responsible stewardship, finding ways to balance human needs with environmental preservation.</p>
+                    </div>
+                </div>
+
+                <div class="scripture-card">
+                    <p class="scripture-text">"The earth is the Lord's, and everything in it, the world, and all who live in it; for he founded it on the seas and established it on the waters."</p>
+                    <p class="scripture-reference">Psalm 24:1-2</p>
+                    <div class="scripture-reflection">
+                        <p>This psalm reminds us that the earth ultimately belongs to God, not to us. This perspective shapes my approach to environmental management—we are caretakers, not owners. This calls for humility in our interactions with the natural world and recognition that we are accountable for how we treat what has been entrusted to us.</p>
+                    </div>
+                </div>
+
+                <div class="scripture-card">
+                    <p class="scripture-text">"The creation waits in eager expectation for the children of God to be revealed. For the creation was subjected to frustration, not by its own choice, but by the will of the one who subjected it, in hope that the creation itself will be liberated from its bondage to decay and brought into the freedom and glory of the children of God."</p>
+                    <p class="scripture-reference">Romans 8:19-21</p>
+                    <div class="scripture-reflection">
+                        <p>Paul's profound insight connects human redemption with creation's restoration. This passage inspires me to see environmental work as participation in God's redemptive plan for all creation. When we work to restore damaged ecosystems or prevent pollution, we participate in this broader hope for creation's renewal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faith and Environment Section -->
+    <section class="faith-environment">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Faith-Based Environmental Principles</h2>
+                <p>Core values that guide my approach to environmental stewardship</p>
+            </div>
+
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <i class="fas fa-hands-holding"></i>
+                    </div>
+                    <h3>Stewardship</h3>
+                    <p>Recognizing that the earth's resources are entrusted to our care by God, requiring responsible management and conservation for future generations.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Justice</h3>
+                    <p>Ensuring that environmental benefits and burdens are distributed fairly, with special concern for the poor and vulnerable who often bear the greatest impacts of environmental degradation.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>Developing practices and systems that meet present needs without compromising the ability of future generations to meet their own needs.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>Recognizing that environmental challenges require collective action and shared responsibility, informed by the Christian call to love our neighbors.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <h3>Hope</h3>
+                    <p>Approaching environmental challenges with optimism grounded in faith, believing that positive change is possible through dedicated action and divine guidance.</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Compassion</h3>
+                    <p>Extending care and concern to all living beings as part of God's creation, recognizing the intrinsic value of diverse ecosystems and species.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflections Section -->
+    <section class="reflections-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Personal Reflections</h2>
+                <p>Thoughts on integrating faith with professional practice in environmental science</p>
+            </div>
+
+            <div class="reflections-grid">
+                <div class="reflection-card">
+                    <div class="reflection-header">
+                        <h3 class="reflection-title">Environmental Ethics Through a Christian Lens</h3>
+                        <p class="reflection-date">January 15, 2025</p>
+                    </div>
+                    <div class="reflection-content">
+                        <p class="reflection-preview">How does Christian theology inform our approach to challenging environmental ethical dilemmas? In this reflection, I explore how principles of creation care can guide decision-making in complex environmental scenarios, particularly in resource-constrained contexts like Liberia.</p>
+                    </div>
+                    <div class="reflection-footer">
+                        <a href="#" class="btn faith-btn">Read More</a>
+                    </div>
+                </div>
+
+                <div class="reflection-card">
+                    <div class="reflection-header">
+                        <h3 class="reflection-title">Faith in the Laboratory</h3>
+                        <p class="reflection-date">March 8, 2025</p>
+                    </div>
+                    <div class="reflection-content">
+                        <p class="reflection-preview">Science and faith are often portrayed as being in conflict, but my experience has shown they can be complementary ways of understanding our world. This reflection explores how my Christian faith enhances my scientific work rather than hindering it, providing purpose and ethical grounding.</p>
+                    </div>
+                    <div class="reflection-footer">
+                        <a href="#" class="btn faith-btn">Read More</a>
+                    </div>
+                </div>
+
+                <div class="reflection-card">
+                    <div class="reflection-header">
+                        <h3 class="reflection-title">Teaching Environmental Care as Spiritual Practice</h3>
+                        <p class="reflection-date">April 22, 2025</p>
+                    </div>
+                    <div class="reflection-content">
+                        <p class="reflection-preview">How can we help students connect environmental responsibility with spiritual values? This reflection shares approaches I've developed for integrating ethical considerations into environmental education, helping students see the moral dimensions of environmental challenges.</p>
+                    </div>
+                    <div class="reflection-footer">
+                        <a href="#" class="btn faith-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommended Readings -->
+    <section class="readings-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Recommended Readings</h2>
+                <p>Books that have influenced my thinking on faith and environmental stewardship</p>
+            </div>
+
+            <div class="readings-list">
+                <div class="book-card">
+                    <div class="book-cover" style="background-image: url('images/book1.jpg');"></div>
+                    <div class="book-details">
+                        <h3 class="book-title">Caring for Creation: The Evangelical's Guide to Climate Change and a Healthy Environment</h3>
+                        <p class="book-author">By Mitch Hescox and Paul Douglas</p>
+                        <p class="book-description">This book provides a balanced perspective on climate change from an evangelical Christian viewpoint, emphasizing the biblical mandate to care for creation while addressing common misconceptions.</p>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover" style="background-image: url('images/book2.jpg');"></div>
+                    <div class="book-details">
+                        <h3 class="book-title">For the Beauty of the Earth: A Christian Vision for Creation Care</h3>
+                        <p class="book-author">By Steven Bouma-Prediger</p>
+                        <p class="book-description">A theological exploration of environmental stewardship that grounds creation care in biblical principles and Christian tradition, offering practical guidance for living more sustainably.</p>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-cover" style="background-image: url('images/book3.jpg');"></div>
+                    <div class="book-details">
+                        <h3 class="book-title">Laudato Si': On Care for Our Common Home</h3>
+                        <p class="book-author">By Pope Francis</p>
+                        <p class="book-description">Though from a Catholic perspective, this encyclical offers insights valuable across Christian traditions, addressing the interconnection between environmental degradation, poverty, and human dignity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community-section">
+        <div class="container community-container">
+            <h2>Faith Community Engagement</h2>
+            <p>I believe that faith communities have a vital role to play in addressing environmental challenges. Churches and other religious organizations can serve as powerful voices for creation care and environmental justice, mobilizing believers to take action in their homes, workplaces, and communities.</p>
+            <p>I am available to speak with churches and faith-based organizations about environmental stewardship from a Christian perspective. These presentations can be tailored to specific environmental concerns relevant to your community.</p>
+            <a href="contact.html" class="white-btn">Request a Speaking Engagement</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Sahr Emmanuel</h3>
+                    <p>Lecturer, Researcher, Environmental Specialist</p>
+                    <p>University of Liberia & Environmental Protection Agency</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="teaching.html">Teaching</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: esahr37@gmail.com</p>
+                    <p>Phone: +231 881 650 202</p>
+                    <p>Office: University of Liberia, Monrovia</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-researchgate"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sahr Emmanuel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        document.getElementById('mobile-nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('show');
+        });
+    </script>
+</body>
+</html> 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--light-color);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Page header */
+        .page-header {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/faith-background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--faith-primary);
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Faith intro section */
+        .faith-intro {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 2rem;
+            color: var(--faith-primary);
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--dark-color);
+        }
+
+        .faith-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .faith-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .faith-content h2 {
+            font-size:
