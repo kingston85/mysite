@@ -1,0 +1,33 @@
+# Protect the directory from direct access
+# This should be placed in the admin directory
+
+# Disable directory browsing
+Options -Indexes
+
+# Deny access to all file types except PHP
+<FilesMatch "^(?!.*\.php$)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block access to sensitive files
+<FilesMatch "^(\.htaccess|\.htpasswd|config\.php)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Additional security headers
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    # Enable XSS protection in browsers
+    Header set X-XSS-Protection "1; mode=block"
+    # Prevent MIME-type sniffing
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# If you want basic HTTP Authentication, uncomment and customize these lines
+# AuthType Basic
+# AuthName "Restricted Area"
+# AuthUserFile /path/to/.htpasswd
+# Require valid-user
