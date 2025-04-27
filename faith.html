@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faith & Reflections | Sahr Emmanuel</title>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <meta name="theme-color" content="#2c6e49">
+    <meta name="msapplication-TileColor" content="#2c6e49">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Color variables */
@@ -86,6 +98,103 @@
         }
 
         .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--light-color);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Page header */
+        .page-header {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/faith-background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--faith-primary);
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Faith intro section */
+        .faith-intro {
+            padding: 80px 0;
+            background-color: var(--white-color);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 2rem;
+            color: var(--faith-primary);
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--dark-color);
+        }
+
+        .faith-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .faith-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .faith-content h2 {
             font-size: 1.8rem;
             margin-bottom: 20px;
             color: var(--faith-primary);
@@ -525,7 +634,7 @@
             <div class="principles-grid">
                 <div class="principle-card">
                     <div class="principle-icon">
-                        <i class="fas fa-hands-holding"></i>
+                        <i class="fas fa-hands-helping"></i>
                     </div>
                     <h3>Stewardship</h3>
                     <p>Recognizing that the earth's resources are entrusted to our care by God, requiring responsible management and conservation for future generations.</p>
@@ -702,7 +811,7 @@
                 <div class="footer-section">
                     <h3>Connect</h3>
                     <div class="social-links">
-                       <a href="https://web.facebook.com/emmanuel.kingston.167" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://web.facebook.com/emmanuel.kingston.167" target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/sahr-emmanuel-005758196/" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="https://www.instagram.com/kingston.85/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -721,101 +830,4 @@
         });
     </script>
 </body>
-</html> 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        nav ul {
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            padding: 8px 15px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: var(--light-color);
-        }
-
-        .mobile-nav-toggle {
-            display: none;
-            background: transparent;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--primary-color);
-        }
-
-        /* Page header */
-        .page-header {
-            padding: 150px 0 80px;
-            text-align: center;
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/faith-background.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--faith-primary);
-        }
-
-        .page-header p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-
-        /* Faith intro section */
-        .faith-intro {
-            padding: 80px 0;
-            background-color: var(--white-color);
-        }
-
-        .section-heading {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-heading h2 {
-            font-size: 2rem;
-            color: var(--faith-primary);
-            margin-bottom: 15px;
-        }
-
-        .section-heading p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--dark-color);
-        }
-
-        .faith-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .faith-image {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .faith-content h2 {
-            font-size:
+</html>
