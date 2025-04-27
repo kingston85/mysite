@@ -1,261 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head content as home page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Philosophy & Courses | Sahr Emmanuel</title>
+    
+    <!-- Meta tags and favicon same as home page -->
+    
+    <style>
+        /* Add these styles to your existing CSS */
+        
+        .teaching-hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('images/classroom-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .pedagogy-section {
+            padding: 90px 0;
+            background-color: var(--white-color);
+        }
+
+        .pedagogy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .pedagogy-card {
+            padding: 40px;
+            border-radius: 12px;
+            background: var(--light-gray);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .pedagogy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .courses-section {
+            padding: 90px 0;
+            background-color: var(--light-gray);
+        }
+
+        .course-card {
+            background: var(--white-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .course-header {
+            padding: 25px;
+            background: var(--primary-color);
+            color: var(--white-color);
+        }
+
+        .course-body {
+            padding: 25px;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .course-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary-color);
+        }
+
+        .resource-section {
+            padding: 90px 0;
+            background-color: var(--white-color);
+        }
+
+        .resource-card {
+            border: 2px solid var(--light-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            border-color: var(--primary-color);
+            background: var(--light-gray);
+        }
+
+        /* Add responsive styles */
+        @media (max-width: 768px) {
+            .teaching-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .course-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header (Same as home page) -->
+    <!-- Header same as home page -->
     <header id="header">
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <i class="fas fa-leaf logo-icon"></i>
-                    Sahr Emmanuel
-                </div>
-                <button class="mobile-nav-toggle" id="mobile-nav-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul id="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="teaching.html">Teaching</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="epa-work.html">EPA Work</a></li>
-                    <li><a href="faith.html">Faith</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <!-- Same header content -->
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header fade-in">
+    <!-- Teaching Hero -->
+    <section class="page-header teaching-hero fade-in">
         <div class="container">
-            <h1>About Me</h1>
-            <p>Discover my journey in environmental science and commitment to sustainable solutions</p>
+            <h1>Educational Leadership</h1>
+            <p>Shaping the next generation of environmental scientists through innovative pedagogy</p>
         </div>
     </section>
 
-    <!-- Professional Bio Section -->
-    <section class="bio-section">
-        <div class="container">
-            <div class="bio-grid slide-up">
-                <div class="bio-image">
-                    <img src="images/profile.jpeg" alt="Sahr Emmanuel">
-                </div>
-                <div class="bio-content">
-                    <h2>Environmental Scientist & Educator</h2>
-                    <div class="bio-text">
-                        <p>With a Master's in Environmental Science from UST Beijing and a Chemical Engineering background from Tianjin University, I bridge technical expertise with sustainable solutions. My work at the University of Liberia and EPA Liberia focuses on practical environmental remediation and educating future leaders.</p>
-                        
-                        <div class="bio-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-award"></i>
-                                <h4>12+ Years Experience</h4>
-                                <p>Combining academic and field work</p>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-book-open"></i>
-                                <h4>8 Courses Developed</h4>
-                                <p>In sustainable development topics</p>
-                            </div>
-                        </div>
-                        
-                        <a href="documents/Sahr_Emmanuel_CV.pdf" class="btn" download>
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Timeline -->
-    <section class="timeline-section">
+    <!-- Teaching Philosophy -->
+    <section class="pedagogy-section">
         <div class="container">
             <div class="section-heading slide-up">
-                <h2>Professional Journey</h2>
-                <p>Key milestones in my academic and career development</p>
+                <h2>Teaching Philosophy</h2>
+                <p>Blending academic rigor with practical environmental solutions</p>
             </div>
             
-            <div class="timeline">
-                <div class="timeline-item slide-up">
-                    <div class="timeline-card">
-                        <div class="timeline-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="timeline-content">
-                            <h3>MSc Environmental Science<span>2021-2024</span></h3>
-                            <h4>University of Science & Technology Beijing</h4>
-                            <ul>
-                                <li>Thesis on construction waste recycling using LCA</li>
-                                <li>Teaching assistant for 3 core courses</li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="pedagogy-grid">
+                <div class="pedagogy-card slide-up">
+                    <i class="fas fa-hand-holding-water fa-3x" style="color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3>Experiential Learning</h3>
+                    <p>Field-based learning modules integrated with classroom theory, emphasizing real-world environmental challenges</p>
                 </div>
                 
-                <!-- More timeline items with consistent styling -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills-section">
-        <div class="container">
-            <div class="section-heading slide-up">
-                <h2>Core Competencies</h2>
-                <p>Technical and professional skills driving my work</p>
-            </div>
-            
-            <div class="skills-grid">
-                <div class="skill-category slide-up">
-                    <h3><i class="fas fa-flask"></i> Technical Expertise</h3>
-                    <div class="skill">
-                        <h4>Environmental Modeling</h4>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <!-- More skills -->
+                <div class="pedagogy-card slide-up">
+                    <i class="fas fa-users fa-3x" style="color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3>Student-Centered Approach</h3>
+                    <p>Customized learning paths that accommodate diverse learning styles and career aspirations</p>
                 </div>
                 
-                <div class="skill-category slide-up">
-                    <h3><i class="fas fa-tools"></i> Tools & Software</h3>
-                    <!-- Skill items -->
+                <div class="pedagogy-card slide-up">
+                    <i class="fas fa-seedling fa-3x" style="color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3>Sustainability Focus</h3>
+                    <p>Curriculum emphasizing circular economy principles and sustainable development goals</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Personal Values Section -->
-    <section class="values-section">
+    <!-- Courses Section -->
+    <section class="courses-section">
         <div class="container">
             <div class="section-heading slide-up">
-                <h2>Personal Philosophy</h2>
-                <p>Guiding principles that shape my work and life</p>
+                <h2>Featured Courses</h2>
+                <p>Core environmental science curriculum developed and taught</p>
             </div>
-            
-            <div class="values-grid">
-                <div class="value-card slide-up">
-                    <i class="fas fa-hand-holding-water"></i>
-                    <h3>Stewardship</h3>
-                    <p>Environmental protection as moral responsibility</p>
+
+            <div class="cards">
+                <div class="course-card slide-up">
+                    <div class="course-header">
+                        <h3>Environmental Soil Chemistry</h3>
+                        <p>Graduate Level Course</p>
+                    </div>
+                    <div class="course-body">
+                        <div class="course-meta">
+                            <div class="course-meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>3 Credit Hours</span>
+                            </div>
+                            <div class="course-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Semester Long</span>
+                            </div>
+                        </div>
+                        <p>Comprehensive study of soil composition, contamination processes, and remediation techniques</p>
+                        <ul class="course-topics">
+                            <li><i class="fas fa-check" style="color: var(--secondary-color);"></i> Soil nutrient cycles</li>
+                            <li><i class="fas fa-check" style="color: var(--secondary-color);"></i> Heavy metal remediation</li>
+                            <li><i class="fas fa-check" style="color: var(--secondary-color);"></i> Sustainable land use practices</li>
+                        </ul>
+                    </div>
                 </div>
-                <!-- More value cards -->
+
+                <!-- Repeat similar course cards -->
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
+    <!-- Teaching Methods -->
+    <section class="resource-section">
         <div class="container">
             <div class="section-heading slide-up">
-                <h2>Colleague Perspectives</h2>
-                <p>What peers and students say about my work</p>
+                <h2>Innovative Teaching Methods</h2>
+                <p>Modern pedagogical approaches for effective learning</p>
             </div>
             
-            <div class="testimonial-carousel">
-                <!-- Testimonial cards matching home page style -->
+            <div class="grid-3-col">
+                <div class="resource-card slide-up">
+                    <i class="fas fa-vr-cardboard fa-2x" style="color: var(--primary-color);"></i>
+                    <h3>Virtual Field Simulations</h3>
+                    <p>Immersive VR experiences for remote site analysis</p>
+                </div>
+                
+                <div class="resource-card slide-up">
+                    <i class="fas fa-project-diagram fa-2x" style="color: var(--primary-color);"></i>
+                    <h3>Case-Based Learning</h3>
+                    <p>Real-world environmental case studies from Liberia</p>
+                </div>
+                
+                <div class="resource-card slide-up">
+                    <i class="fas fa-flask fa-2x" style="color: var(--primary-color);"></i>
+                    <h3>Lab Practicums</h3>
+                    <p>Hands-on experience with EPA-standard equipment</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section (Same as home page) -->
-    <section class="cta-section">
-        <div class="container cta-container">
-            <h2 class="cta-title">Collaborate on Environmental Solutions</h2>
-            <p class="cta-text">Let's work together to create sustainable impact</p>
-            <a href="contact.html" class="btn cta-btn">Start Conversation</a>
+    <!-- Student Impact -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-heading slide-up">
+                <h2>Educational Impact</h2>
+                <p>Measurable outcomes in environmental education</p>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Students Mentored</div>
+                </div>
+                
+                <!-- Additional stats -->
+            </div>
         </div>
     </section>
 
-    <!-- Footer (Same as home page) -->
+    <!-- Footer same as home page -->
     <footer>
         <!-- Same footer content -->
     </footer>
 
-    <!-- Add matching CSS styles -->
-    <style>
-        /* Unified color variables and base styles */
-        :root {
-            --primary-color: #2c6e49;
-            --primary-dark: #1a472a;
-            --secondary-color: #4c956c;
-            --accent-color: #d68c45;
-            --accent-light: #f8c174;
-            --light-color: #f2e8cf;
-            --light-gray: #f0f0f0;
-            --dark-color: #333;
-            --white-color: #fff;
-            --text-color: #242424;
-        }
-
-        .page-header {
-            padding: 160px 0 100px;
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/nature-background.jpg');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-        }
-
-        .bio-section {
-            padding: 90px 0;
-            background: var(--white-color);
-        }
-
-        .bio-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .bio-image img {
-            border-radius: 15px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .bio-content h2 {
-            font-size: 2.4rem;
-            color: var(--primary-color);
-            margin-bottom: 25px;
-        }
-
-        .bio-highlights {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .highlight-item {
-            background: var(--light-gray);
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .timeline-section {
-            padding: 90px 0;
-            background: var(--light-gray);
-        }
-
-        .timeline-card {
-            background: var(--white-color);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        /* Remaining CSS styles matching home page components */
-    </style>
-
-    <!-- Same JavaScript as home page -->
-    <script>
-        // Same interactive functionality
-    </script>
+    <!-- Scripts same as home page -->
 </body>
 </html>
