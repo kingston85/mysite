@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sahr Emmanuel | Environmental Science & Engineering Professional</title>
     
-    <!-- FAVICON CODE - ADD THIS TO ALL PAGES -->
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Sahr Emmanuel - Environmental Science and Engineering professional specializing in sustainable development, carbon emission reduction, and environmental remediation in Liberia and beyond.">
+    <meta name="keywords" content="Sahr Emmanuel, Environmental Science, Sustainable Development, EPA, Liberia, Environmental Remediation">
+    
+    <!-- FAVICON CODE -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
@@ -17,19 +21,28 @@
     <meta name="msapplication-config" content="favicon/browserconfig.xml">
     <!-- END FAVICON CODE -->
     
+    <!-- Font Awesome and Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Color variables */
+        /* Color variables with enhanced palette */
         :root {
             --primary-color: #2c6e49;
+            --primary-dark: #1a472a;
             --secondary-color: #4c956c;
             --accent-color: #d68c45;
+            --accent-light: #f8c174;
             --light-color: #f2e8cf;
+            --light-gray: #f0f0f0;
             --dark-color: #333;
             --white-color: #fff;
+            --text-color: #242424;
         }
 
-        /* Base styles */
+        /* Base styles with improved typography */
         * {
             margin: 0;
             padding: 0;
@@ -37,15 +50,21 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
             background-color: #fafafa;
+            overflow-x: hidden;
         }
 
         a {
             text-decoration: none;
             color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
         }
 
         ul {
@@ -62,35 +81,69 @@
             padding: 0 20px;
         }
 
+        /* Enhanced buttons with animation */
         .btn {
             display: inline-block;
             background: var(--primary-color);
             color: var(--white-color);
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px rgba(44, 110, 73, 0.2);
             transition: all 0.3s ease;
         }
 
         .btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(44, 110, 73, 0.25);
         }
 
-        /* Header styles */
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white-color);
+        }
+
+        /* Improved header with modern styling */
         header {
             background-color: var(--white-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 100;
+            transition: all 0.4s ease;
+        }
+
+        header.scrolled {
+            padding: 5px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 1.8rem;
             color: var(--primary-color);
         }
 
@@ -98,7 +151,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
         nav ul {
@@ -112,11 +165,33 @@
         nav ul li a {
             padding: 8px 15px;
             border-radius: 4px;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
         }
 
-        nav ul li a:hover {
-            background-color: var(--light-color);
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 80%;
+        }
+
+        nav ul li a.active {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        nav ul li a.active::after {
+            width: 80%;
         }
 
         .mobile-nav-toggle {
@@ -128,188 +203,466 @@
             color: var(--primary-color);
         }
 
-        /* Hero section */
+        /* Enhanced hero section with subtle animation */
         .hero {
-            padding: 150px 0 100px;
+            padding: 180px 0 120px;
             text-align: center;
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('images/nature-background.jpg');
+            background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)), url('images/nature-background.jpg');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(var(--light-color) 2px, transparent 2px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+            z-index: 0;
         }
 
         .hero-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 35px;
         }
 
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 30px;
-            border: 5px solid var(--light-color);
+            border: 5px solid var(--white-color);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+            transition: transform 0.5s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-img-container::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            border: 2px dashed var(--primary-color);
+            opacity: 0.5;
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3.2rem;
+            margin-bottom: 15px;
             color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .hero p.tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 8px;
+            color: var(--accent-color);
+            letter-spacing: 1px;
         }
 
         .hero p.roles {
             font-size: 1.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: var(--secondary-color);
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero p.intro {
             font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: var(--dark-color);
+            margin-bottom: 35px;
+            color: var(--text-color);
+            max-width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
         }
 
-        /* Featured sections */
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Improved featured sections with enhanced cards */
         .featured-sections {
-            padding: 80px 0;
+            padding: 90px 0;
             background-color: var(--white-color);
+            position: relative;
+        }
+
+        .featured-sections::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: var(--white-color);
+            clip-path: polygon(0 50%, 100% 0, 100% 100%, 0% 100%);
         }
 
         .section-heading {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
+            position: relative;
         }
 
         .section-heading h2 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-color);
             margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-heading h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .section-heading p {
             max-width: 700px;
             margin: 0 auto;
             color: var(--dark-color);
+            font-size: 1.1rem;
         }
 
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
 
         .card {
             background-color: var(--white-color);
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
 
         .card-img {
-            height: 200px;
+            height: 220px;
             background-size: cover;
             background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%);
         }
 
         .card-content {
-            padding: 20px;
+            padding: 25px;
         }
 
         .card-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             color: var(--primary-color);
         }
 
         .card-content p {
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             color: var(--dark-color);
+            line-height: 1.7;
         }
 
-        /* Latest updates */
+        /* Enhanced latest updates section */
         .latest-updates {
-            padding: 80px 0;
-            background-color: var(--light-color);
+            padding: 90px 0;
+            background-color: var(--light-gray);
+            position: relative;
+        }
+
+        .latest-updates::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: var(--light-gray);
+            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
         }
 
         .updates {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
         }
 
         .update-item {
             background-color: var(--white-color);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .update-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .update-date {
             font-size: 0.9rem;
             color: var(--secondary-color);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .update-date i {
+            margin-right: 8px;
         }
 
         .update-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
             color: var(--primary-color);
         }
 
-        /* Quote section */
+        /* Enhanced quote section */
         .quote-section {
-            padding: 60px 0;
+            padding: 80px 0;
             background-color: var(--primary-color);
             color: var(--white-color);
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0;
         }
 
         .quote-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .quote-text {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.4;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            position: relative;
+            padding: 0 30px;
+        }
+        
+        .quote-text::before,
+        .quote-text::after {
+            content: '"';
+            font-size: 3rem;
+            position: absolute;
+            opacity: 0.5;
+        }
+        
+        .quote-text::before {
+            top: -20px;
+            left: 0;
+        }
+        
+        .quote-text::after {
+            bottom: -40px;
+            right: 0;
         }
 
-        /* Footer */
+        .quote-author {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Stats section (NEW) */
+        .stats-section {
+            padding: 70px 0;
+            background-color: var(--white-color);
+            text-align: center;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+
+        /* CTA section (NEW) */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-color) 100%);
+            color: var(--white-color);
+            text-align: center;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-btn {
+            background-color: var(--white-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--accent-light);
+            color: var(--primary-dark);
+        }
+
+        /* Enhanced footer */
         footer {
             background-color: var(--dark-color);
             color: var(--white-color);
-            padding: 40px 0 20px;
+            padding: 60px 0 20px;
         }
 
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
         .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
             color: var(--light-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li:hover {
+            transform: translateX(5px);
         }
 
         .footer-links a {
             color: var(--white-color);
             transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 8px;
+            font-size: 0.8rem;
         }
 
         .footer-links a:hover {
@@ -324,20 +677,75 @@
         .social-links a {
             color: var(--white-color);
             font-size: 1.5rem;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .social-links a:hover {
             color: var(--accent-color);
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 25px;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Responsive styles */
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive styles - enhanced */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p.roles {
+                max-width: 90%;
+            }
+            
+            .hero p.intro {
+                max-width: 90%;
+            }
+        }
+
         @media (max-width: 768px) {
             .mobile-nav-toggle {
                 display: block;
@@ -347,12 +755,13 @@
                 display: none;
                 flex-direction: column;
                 position: absolute;
-                top: 80px;
+                top: 70px;
                 left: 0;
                 width: 100%;
                 background-color: var(--white-color);
-                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
                 padding: 20px;
+                z-index: 10;
             }
 
             nav ul.show {
@@ -360,30 +769,180 @@
             }
 
             nav ul li {
-                margin: 10px 0;
+                margin: 12px 0;
+            }
+            
+            nav ul li a::after {
+                display: none;
             }
 
             .hero {
-                padding: 120px 0 80px;
+                padding: 140px 0 100px;
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
+            
+            .hero p.tagline {
+                font-size: 1.2rem;
+            }
+            
+            .hero p.roles {
+                font-size: 1.1rem;
+                max-width: 100%;
+            }
+            
+            .hero p.intro {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+            
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .quote-text {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .quote-text {
+                font-size: 1.2rem;
+                padding: 0 20px;
+            }
+            
+            .section-heading h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0); 
+            }
+        }
+        
+        /* Dark mode toggle - NEW */
+        .dark-mode-toggle {
+            position: fixed;
+            right: 25px;
+            top: 100px;
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .dark-mode-toggle:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode header {
+            background-color: #1e1e1e;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        body.dark-mode .logo,
+        body.dark-mode nav ul li a {
+            color: var(--light-color);
+        }
+        
+        body.dark-mode .hero {
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.85)), url('images/nature-background.jpg');
+        }
+        
+        body.dark-mode .hero h1 {
+            color: var(--light-color);
+        }
+        
+        body.dark-mode .featured-sections,
+        body.dark-mode .card,
+        body.dark-mode .update-item {
+            background-color: #1e1e1e;
+        }
+        
+        body.dark-mode .card-content h3,
+        body.dark-mode .update-title,
+        body.dark-mode .section-heading h2 {
+            color: var(--light-color);
+        }
+        
+        body.dark-mode .card-content p,
+        body.dark-mode .section-heading p,
+        body.dark-mode .update-item p {
+            color: #b0b0b0;
+        }
+        
+        body.dark-mode .latest-updates {
+            background-color: #171717;
+        }
+        
+        body.dark-mode .stats-section {
+            background-color: #1a1a1a;
+        }
+        
+        body.dark-mode .stat-label {
+            color: #b0b0b0;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <div class="container">
             <nav>
-                <div class="logo">Sahr Emmanuel</div>
+                <div class="logo">
+                    <i class="fas fa-leaf logo-icon"></i>
+                    Sahr Emmanuel
+                </div>
                 <button class="mobile-nav-toggle" id="mobile-nav-toggle">
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul id="nav-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="teaching.html">Teaching</a></li>
                     <li><a href="research.html">Research</a></li>
@@ -397,43 +956,49 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container hero-container">
-            <img src="images/profile.jpeg" alt="Sahr Emmanuel" class="profile-img">
+        <div class="container hero-container fade-in">
+            <div class="profile-img-container">
+                <img src="images/profile.jpeg" alt="Sahr Emmanuel" class="profile-img">
+            </div>
+            <p class="tagline">Environmental Scientist & Educator</p>
             <h1>Sahr Emmanuel</h1>
             <p class="roles">Lecturer of Sustainable Development & Environmental Soil Chemistry | EPA Chemical Remediation Analyst | Researcher</p>
             <p class="intro">Results-driven Environmental Science and Engineering professional with expertise in carbon emission reduction, sustainable development, and environmental remediation. Committed to advancing sustainable solutions in Liberia and beyond.</p>
-            <a href="about.html" class="btn">Learn More</a>
+            <div class="hero-btns">
+                <a href="about.html" class="btn">Learn More</a>
+                <a href="contact.html" class="btn btn-outline">Get In Touch</a>
+            </div>
         </div>
     </section>
 
     <!-- Featured Sections -->
     <section class="featured-sections">
         <div class="container">
-            <div class="section-heading">
+            <div class="section-heading slide-up">
                 <h2>My Professional Focus</h2>
                 <p>Exploring the intersection of environmental science, education, and public service</p>
             </div>
             <div class="cards">
-                <div class="card">
+                <div class="card slide-up">
                     <div class="card-img" style="background-image: url('images/teaching-placeholder.jpg');"></div>
                     <div class="card-content">
-                        <h3>Academic Teaching</h3>
+                        <h3><i class="fas fa-chalkboard-teacher"></i> Academic Teaching</h3>
                         <p>Inspiring the next generation of environmental scientists at the University of Liberia through rigorous curriculum and hands-on learning.</p>
                         <a href="teaching.html" class="btn">Explore Teaching</a>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card slide-up">
                     <div class="card-img" style="background-image: url('images/research-placeholder.jpg');"></div>
                     <div class="card-content">
-                        <h3>Environmental Research</h3>
+                        <h3><i class="fas fa-microscope"></i> Environmental Research</h3>
                         <p>Investigating sustainable solutions through life cycle assessment, waste management, and carbon emission reduction studies.</p>
                         <a href="research.html" class="btn">View Research</a>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card slide-up">
                     <div class="card-img" style="background-image: url('images/epa-placeholder.jpg');"></div>
                     <div class="card-content">
-                        <h3>EPA Contributions</h3>
+                        <h3><i class="fas fa-leaf"></i> EPA Contributions</h3>
                         <p>Applying technical expertise as a Chemical Remediation Analyst to address environmental challenges in Liberia.</p>
                         <a href="epa-work.html" class="btn">EPA Projects</a>
                     </div>
@@ -442,26 +1007,66 @@
         </div>
     </section>
 
+    <!-- Stats Section (NEW) -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-heading slide-up">
+                <h2>Impact & Experience</h2>
+                <p>Measurable contributions to environmental science and education</p>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-number">12+</div>
+                    <div class="stat-label">Research Publications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Students Mentored</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Environmental Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Latest Updates -->
     <section class="latest-updates">
         <div class="container">
-            <div class="section-heading">
+            <div class="section-heading slide-up">
                 <h2>Latest Updates</h2>
                 <p>Recent milestones, publications, and events</p>
             </div>
             <div class="updates">
                 <div class="update-item">
-                    <p class="update-date">April 15, 2025</p>
+                    <p class="update-date"><i class="far fa-calendar-alt"></i> April 15, 2025</p>
                     <h3 class="update-title">New Research Project on Soil Remediation Techniques</h3>
                     <p>Starting a new investigation into cost-effective soil remediation techniques for Liberian contexts.</p>
                 </div>
                 <div class="update-item">
-                    <p class="update-date">March 22, 2025</p>
+                    <p class="update-date"><i class="far fa-calendar-alt"></i> March 22, 2025</p>
                     <h3 class="update-title">Guest Lecture at Environmental Science Symposium</h3>
                     <p>Presented findings on construction waste recycling opportunities in West Africa.</p>
                 </div>
                 <div class="update-item">
-                    <p class="update-date">February 10, 2025</p>
+                    <p class="update-date"><i class="far fa-calendar-alt"></i> February 10, 2025</p>
                     <h3 class="update-title">New Course Announced: Environmental Impact Assessment</h3>
                     <p>Will be teaching a specialized course on EIA methodologies beginning Fall 2025.</p>
                 </div>
@@ -473,7 +1078,16 @@
     <section class="quote-section">
         <div class="container quote-container">
             <p class="quote-text">"Environmental stewardship is not merely a scientific endeavor, but a moral responsibility that requires both technical expertise and compassionate action."</p>
-            <p>- My Personal Philosophy</p>
+            <p class="quote-author">- My Personal Philosophy</p>
+        </div>
+    </section>
+
+    <!-- CTA Section (NEW) -->
+    <section class="cta-section">
+        <div class="container cta-container">
+            <h2 class="cta-title">Let's Work Together</h2>
+            <p class="cta-text">Interested in collaboration, research opportunities, or expert consultation? I'm always open to new partnerships that advance sustainable environmental practices.</p>
+            <a href="contact.html" class="btn cta-btn">Get in Touch</a>
         </div>
     </section>
 
@@ -489,25 +1103,26 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="teaching.html">Teaching</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="teaching.html"><i class="fas fa-chevron-right"></i> Teaching</a></li>
+                        <li><a href="research.html"><i class="fas fa-chevron-right"></i> Research</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact</h3>
-                    <p>Email: esahr37@gmail.com</p>
-                    <p>Phone: +231 881 650 202</p>
-                    <p>Office: University of Liberia, Monrovia</p>
+                    <p><i class="far fa-envelope"></i> Email: esahr37@gmail.com</p>
+                    <p><i class="fas fa-phone-alt"></i> Phone: +231 881 650 202</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Office: University of Liberia, Monrovia</p>
                 </div>
                 <div class="footer-section">
                     <h3>Connect</h3>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/profile.php?id=6" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/sahr-emmanuel-29/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=6" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/sahr-emmanuel-29/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/kingston.85/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -517,11 +1132,101 @@
         </div>
     </footer>
 
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Dark mode toggle -->
+    <div class="dark-mode-toggle" id="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
     <script>
         // Mobile navigation toggle
         document.getElementById('mobile-nav-toggle').addEventListener('click', function() {
             document.getElementById('nav-menu').classList.toggle('show');
         });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            
+            // Save preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.slide-up');
+            
+            elements.forEach(function(element) {
+                const position = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (position < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Set initial state for animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.slide-up');
+            elements.forEach(function(element) {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.8s ease-in-out';
+            });
+            
+            animateOnScroll();
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>
