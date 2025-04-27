@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Sahr Emmanuel</title>
+    
+    <!-- FAVICON CODE - ADD THIS TO ALL PAGES -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <meta name="theme-color" content="#2c6e49">
+    <meta name="msapplication-TileColor" content="#2c6e49">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <!-- END FAVICON CODE -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Color variables */
@@ -524,7 +537,7 @@
         <div class="container contact-container">
             <div class="contact-form">
                 <h2>Send Me a Message</h2>
-                <form id="contact-form" action="#" method="POST">
+                <form id="contact-form" action="https://formspree.io/f/mzzrzkva" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" class="form-control" required>
@@ -558,9 +571,12 @@
                     </div>
                     
                     <div class="form-group form-checkbox">
-                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes">
                         <label for="newsletter">Subscribe to receive occasional updates about my research and publications</label>
                     </div>
+                    
+                    <!-- Honeypot field to prevent spam -->
+                    <input type="text" name="_gotcha" style="display: none;">
                     
                     <button type="submit" class="submit-btn">Send Message</button>
                     
@@ -576,4 +592,195 @@
             
             <div class="contact-info">
                 <h2>Contact Information</h2>
-                <p>Feel free to reach
+                <p>Feel free to reach out to me with any questions, collaboration opportunities, or speaking requests. I typically respond within 1-2 business days.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-method-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:esahr37@gmail.com">esahr37@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-method-details">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+231881650202">+231 881 650 202</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-method-details">
+                            <h3>Office</h3>
+                            <p>Department of Environmental Science<br>University of Liberia<br>Capitol Hill Campus<br>Monrovia, Liberia</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Connect with me on social media</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=6" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/sahr-emmanuel-29/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/kingston.85/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Find Me</h2>
+                <p>My office location at the University of Liberia</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.485077297466!2d-10.80650662424677!3d6.2048263279734754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf09f96c25cf3861%3A0xbca52e7d26bf9da9!2sUniversity%20of%20Liberia!5e0!3m2!1sen!2s!4v1682344125297!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Office Hours</h2>
+                <p>My typical availability for in-person and virtual meetings</p>
+            </div>
+            <div class="appointment-container">
+                <p>I'm available for student consultations, research discussions, and professional meetings during the following hours. Please use the contact form above to schedule a specific time slot.</p>
+                
+                <div class="availability-grid">
+                    <div class="day-column">
+                        <div class="day-name">Monday</div>
+                        <div class="time-slot available">10:00 AM - 12:00 PM</div>
+                        <div class="time-slot available">2:00 PM - 4:00 PM</div>
+                    </div>
+                    <div class="day-column">
+                        <div class="day-name">Tuesday</div>
+                        <div class="time-slot available">9:00 AM - 11:00 AM</div>
+                        <div class="time-slot booked">1:00 PM - 3:00 PM</div>
+                    </div>
+                    <div class="day-column">
+                        <div class="day-name">Wednesday</div>
+                        <div class="time-slot booked">10:00 AM - 12:00 PM</div>
+                        <div class="time-slot available">3:00 PM - 5:00 PM</div>
+                    </div>
+                    <div class="day-column">
+                        <div class="day-name">Thursday</div>
+                        <div class="time-slot available">11:00 AM - 1:00 PM</div>
+                        <div class="time-slot booked">2:00 PM - 4:00 PM</div>
+                    </div>
+                    <div class="day-column">
+                        <div class="day-name">Friday</div>
+                        <div class="time-slot available">9:00 AM - 11:00 AM</div>
+                        <div class="time-slot available">1:00 PM - 3:00 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Sahr Emmanuel</h3>
+                    <p>Lecturer, Researcher, Environmental Specialist</p>
+                    <p>University of Liberia & Environmental Protection Agency</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="teaching.html">Teaching</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: esahr37@gmail.com</p>
+                    <p>Phone: +231 881 650 202</p>
+                    <p>Office: University of Liberia, Monrovia</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/profile.php?id=6" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/sahr-emmanuel-29/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/kingston.85/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sahr Emmanuel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        document.getElementById('mobile-nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('show');
+        });
+
+        // Form submission handling
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            // Show loading state
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Hide any previous messages
+            document.getElementById('form-success').style.display = 'none';
+            document.getElementById('form-error').style.display = 'none';
+            
+            // We'll use AJAX to handle the form submission to provide a better user experience
+            event.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            fetch('https://formspree.io/f/mzzrzkva', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Network response was not ok.');
+            })
+            .then(data => {
+                // Form submitted successfully
+                document.getElementById('form-success').style.display = 'block';
+                document.getElementById('contact-form').reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(function() {
+                    document.getElementById('form-success').style.display = 'none';
+                }, 5000);
+            })
+            .catch(error => {
+                // Show error message
+                document.getElementById('form-error').style.display = 'block';
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                // Restore button state
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
