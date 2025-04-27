@@ -1,4 +1,289 @@
-<!-- Contact Section -->
+<div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-leaf"></i> Sahr Emmanuel
+                </a>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="teaching.html" class="active">Teaching</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="epa-work.html">EPA Work</a></li>
+                    <li><a href="faith.html">Faith</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Sahr Emmanuel</h3>
+                    <p>Lecturer, Researcher, Environmental Specialist</p>
+                    <p>University of Liberia & Environmental Protection Agency</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="teaching.html"><i class="fas fa-chevron-right"></i> Teaching</a></li>
+                        <li><a href="research.html"><i class="fas fa-chevron-right"></i> Research</a></li>
+                        <li><a href="epa-work.html"><i class="fas fa-chevron-right"></i> EPA Work</a></li>
+                        <li><a href="faith.html"><i class="fas fa-chevron-right"></i> Faith</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="far fa-envelope"></i> Email: esahr37@gmail.com</p>
+                    <p><i class="fas fa-phone-alt"></i> Phone: +231 881 650 202</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Office: University of Liberia, Monrovia</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/emmanuel.kingston.167" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/sahr-emmanuel-005758196/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/kingston.85/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sahr Emmanuel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark mode toggle -->
+    <div class="dark-mode-toggle" id="dark-mode-toggle">
+        <i class="fas fa-sun"></i>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+        
+        // Check for saved preference
+        if (localStorage.getItem('lightMode') === 'enabled') {
+            body.classList.add('light-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', function() {
+            body.classList.toggle('light-mode');
+            
+            // Save preference
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('lightMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                localStorage.setItem('lightMode', 'disabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        });
+        
+        // Tab functionality for courses
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = 'none';
+            }
+            
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabName).style.display = 'block';
+            evt.currentTarget.classList.add('active');
+        }
+        
+        // Make first tab active by default
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('spring2025').style.display = 'block';
+            
+            // Check for URL parameters to open specific tab
+            const urlParams = new URLSearchParams(window.location.search);
+            const tabParam = urlParams.get('tab');
+            if (tabParam) {
+                const tabElement = document.getElementById(tabParam);
+                if (tabElement) {
+                    openTab({ currentTarget: document.querySelector(`[onclick="openTab(event, '${tabParam}')"]`) }, tabParam);
+                }
+            }
+        });
+    </script>
+</body>
+</html>        /* Dark mode toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            right: 25px;
+            top: 100px;
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            color: var(--text-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .dark-mode-toggle:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333333;
+        }
+        
+        body.light-mode header {
+            background-color: #ffffff;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        body.light-mode .logo,
+        body.light-mode .nav-links a {
+            color: #333333;
+        }
+        
+        body.light-mode .nav-links a.active {
+            color: var(--primary-color);
+        }
+        
+        body.light-mode .hero-section {
+            background-color: #f5f5f5;
+        }
+        
+        body.light-mode .hero-section h1 {
+            color: #333333;
+        }
+        
+        body.light-mode .hero-section p {
+            color: #666666;
+        }
+        
+        body.light-mode .philosophy-section {
+            background-color: #ffffff;
+        }
+        
+        body.light-mode .philosophy-content p {
+            color: #666666;
+        }
+        
+        body.light-mode .courses-section {
+            background-color: #f5f5f5;
+        }
+        
+        body.light-mode .section-title p {
+            color: #666666;
+        }
+        
+        body.light-mode .tab-button {
+            color: #666666;
+        }
+        
+        body.light-mode .course-card {
+            background-color: #ffffff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        body.light-mode .course-description,
+        body.light-mode .course-details ul li {
+            color: #666666;
+        }
+        
+        body.light-mode .approach-section {
+            background-color: #ffffff;
+        }
+        
+        body.light-mode .approach-card {
+            background-color: #f9f9f9;
+        }
+        
+        body.light-mode .approach-card p {
+            color: #666666;
+        }
+        
+        body.light-mode .experience-section {
+            background-color: #f5f5f5;
+        }
+        
+        body.light-mode .timeline-content {
+            background-color: #ffffff;
+        }
+        
+        body.light-mode .timeline-content ul li {
+            color: #666666;
+        }
+        
+        body.light-mode .timeline::before {
+            background-color: var(--primary-color);
+        }
+        
+        body.light-mode .resources-section {
+            background-color: #ffffff;
+        }
+        
+        body.light-mode .resource-card {
+            background-color: #f9f9f9;
+        }
+        
+        body.light-mode .resource-description {
+            color: #666666;
+        }
+        
+        body.light-mode .contact-section {
+            background-color: #f5f5f5;
+        }
+        
+        body.light-mode .office-hours {
+            background-color: #ffffff;
+        }
+        
+        body.light-mode .office-hours p {
+            color: #666666;
+        }
+        
+        body.light-mode .contact-option {
+            background-color: #ffffff;
+        }
+        
+        body.light-mode .contact-option p:last-child {
+            color: #666666;
+        }
+        
+        /* Set default to dark mode */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }    <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
             <div class="section-title">
