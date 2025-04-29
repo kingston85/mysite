@@ -196,25 +196,25 @@ nav ul li a.active::after {
     color: var(--secondary-color);
 }
 
-/* dash container */
-.dash-container {
+/* Dashboard container */
+.dashboard-container {
     padding: 40px 0;
     background-color: var(--light-gray);
 }
 
-.dash-intro {
+.dashboard-intro {
     text-align: center;
     max-width: 900px;
     margin: 0 auto 40px;
 }
 
-.dash-intro h2 {
+.dashboard-intro h2 {
     font-size: 2.2rem;
     color: var(--primary-color);
     margin-bottom: 15px;
 }
 
-.dash-intro p {
+.dashboard-intro p {
     color: var(--text-color);
     margin-bottom: 20px;
 }
@@ -750,11 +750,11 @@ body.dark-mode .page-header h1 {
     color: var(--light-color);
 }
 
-body.dark-mode .dash-intro h2 {
+body.dark-mode .dashboard-intro h2 {
     color: var(--light-color);
 }
 
-body.dark-mode .dash-container {
+body.dark-mode .dashboard-container {
     background-color: #171717;
 }
 
@@ -855,7 +855,7 @@ body.dark-mode .preloader {
         font-size: 1rem;
     }
     
-    .dash-intro h2 {
+    .dashboard-intro h2 {
         font-size: 1.8rem;
     }
 }
@@ -883,12 +883,12 @@ body.dark-mode .preloader {
         background: none;
     }
     
-    .dash-container {
+    .dashboard-container {
         background: none;
         padding: 0;
     }
     
-    #dash-app {
+    #dashboard-app {
         box-shadow: none;
     }
     
