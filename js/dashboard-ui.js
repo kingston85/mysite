@@ -53,7 +53,7 @@ function setupToolCards() {
             if (uploadSection) {
                 uploadSection.style.display = 'block';
             }
-            showToast('Upload your data to visualize it on the dash.', 'info');
+            showToast('Upload your data to visualize it on the dashboard.', 'info');
         });
     }
     
@@ -247,7 +247,7 @@ function setupUtilityButtons() {
     }
     
     // Print dashboard button
-    const printBtn = document.getElementById('print-dash-btn');
+    const printBtn = document.getElementById('print-dashboard-btn');
     if (printBtn) {
         printBtn.addEventListener('click', () => {
             window.print();
