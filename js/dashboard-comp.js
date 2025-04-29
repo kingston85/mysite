@@ -1,6 +1,6 @@
 /**
  * EPA Dashboard - React Components
- * This file contains React components for the EPA dash visualizations
+ * This file contains React components for the EPA dashboard visualizations
  */
 
 // Main Dashboard Component
@@ -400,8 +400,8 @@ const DashboardContent = ({ activeTab, chartTheme, showDataTable, uploadedData }
     }
 };
 
-// Render the dash
+// Render the dashboard
 ReactDOM.render(
     <Dashboard />,
-    document.getElementById('dash-app')
+    document.getElementById('dashboard-app')
 );
