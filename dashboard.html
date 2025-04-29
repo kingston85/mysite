@@ -47,7 +47,7 @@
     </script>
     
     <!-- External CSS -->
-    <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     
     <!-- External Libraries -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
@@ -82,7 +82,7 @@
                     <li><a href="teaching.html">Teaching</a></li>
                     <li><a href="research.html">Research</a></li>
                     <li><a href="epa-work.html">EPA Work</a></li>
-                    <li><a href="dash.html" class="active">Dashboard</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
                     <li><a href="faith.html">Faith</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -99,14 +99,14 @@
     </section>
 
     <!-- Dashboard Container -->
-    <section class="dash-container">
+    <section class="dashboard-container">
         <div class="container">
-            <div class="dash-intro slide-up">
-                <h2>Environmental Monitoring dash</h2>
+            <div class="dashboard-intro slide-up">
+                <h2>Environmental Monitoring Dashboard</h2>
                 <p>This interactive dashboard provides real-time insights into our department's activities, including licensing, field investigations, and environmental monitoring throughout Liberia. Upload your data to generate customized visualizations and comprehensive reports.</p>
                 <div class="button-group">
                     <button class="btn" id="export-data-btn"><i class="fas fa-download"></i> Export Current Data</button>
-                    <button class="btn btn-outline" id="print-dash-btn"><i class="fas fa-print"></i> Print Dashboard</button>
+                    <button class="btn btn-outline" id="print-dashboard-btn"><i class="fas fa-print"></i> Print Dashboard</button>
                 </div>
             </div>
             
@@ -250,8 +250,8 @@
                 </div>
             </div>
             
-            <!-- dash App Container -->
-            <div id="dash-app" class="bg-white rounded-lg overflow-hidden shadow-lg mb-8">
+            <!-- Dashboard App Container -->
+            <div id="dashboard-app" class="bg-white rounded-lg overflow-hidden shadow-lg mb-8">
                 <!-- This is where the React dashboard will be rendered -->
             </div>
             
@@ -438,8 +438,8 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
     <!-- External JavaScript Files -->
-    <script src="js/dash-data.js"></script>
-    <script type="text/babel" src="js/dash-comp.js"></script>
-    <script src="js/dash-ui.js"></script>
+    <script src="js/dashboard-data.js"></script>
+    <script type="text/babel" src="js/dashboard-comp.js"></script>
+    <script src="js/dashboard-ui.js"></script>
 </body>
 </html>
