@@ -1,1820 +1,214 @@
-<div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <i class="fas fa-leaf"></i> Sahr Emmanuel
-                </a>
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="teaching.html" class="active">Teaching</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="epa-work.html">EPA Work</a></li>
-                    <li><a href="faith.html">Faith</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-section">
-                    <h3>Sahr Emmanuel</h3>
-                    <p>Lecturer, Researcher, Environmental Specialist</p>
-                    <p>University of Liberia & Environmental Protection Agency</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="teaching.html"><i class="fas fa-chevron-right"></i> Teaching</a></li>
-                        <li><a href="research.html"><i class="fas fa-chevron-right"></i> Research</a></li>
-                        <li><a href="epa-work.html"><i class="fas fa-chevron-right"></i> EPA Work</a></li>
-                        <li><a href="faith.html"><i class="fas fa-chevron-right"></i> Faith</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p><i class="far fa-envelope"></i> Email: esahr37@gmail.com</p>
-                    <p><i class="fas fa-phone-alt"></i> Phone: +231 881 650 202</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Office: University of Liberia, Monrovia</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <div class="social-links">
-                        <a href="https://web.facebook.com/emmanuel.kingston.167" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/in/sahr-emmanuel-005758196/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/kingston.85/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Sahr Emmanuel. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Dark mode toggle -->
-    <div class="dark-mode-toggle" id="dark-mode-toggle">
-        <i class="fas fa-sun"></i>
-    </div>
-
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                menuToggle.innerHTML = '<i class="fas fa-times"></i>';
-            } else {
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-        
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const body = document.body;
-        
-        // Check for saved preference
-        if (localStorage.getItem('lightMode') === 'enabled') {
-            body.classList.add('light-mode');
-            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        }
-        
-        darkModeToggle.addEventListener('click', function() {
-            body.classList.toggle('light-mode');
-            
-            // Save preference
-            if (body.classList.contains('light-mode')) {
-                localStorage.setItem('lightMode', 'enabled');
-                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            } else {
-                localStorage.setItem('lightMode', 'disabled');
-                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            }
-        });
-        
-        // Tab functionality for courses
-        function openTab(evt, tabName) {
-            const tabContents = document.getElementsByClassName('tab-content');
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].style.display = 'none';
-            }
-            
-            const tabButtons = document.getElementsByClassName('tab-button');
-            for (let i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].classList.remove('active');
-            }
-            
-            document.getElementById(tabName).style.display = 'block';
-            evt.currentTarget.classList.add('active');
-        }
-        
-        // Make first tab active by default
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('spring2025').style.display = 'block';
-            
-            // Check for URL parameters to open specific tab
-            const urlParams = new URLSearchParams(window.location.search);
-            const tabParam = urlParams.get('tab');
-            if (tabParam) {
-                const tabElement = document.getElementById(tabParam);
-                if (tabElement) {
-                    openTab({ currentTarget: document.querySelector(`[onclick="openTab(event, '${tabParam}')"]`) }, tabParam);
-                }
-            }
-        });
-    </script>
-</body>
-</html>        /* Dark mode toggle */
-        .dark-mode-toggle {
-            position: fixed;
-            right: 25px;
-            top: 100px;
-            width: 45px;
-            height: 45px;
-            background: var(--primary-color);
-            color: var(--text-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 99;
-        }
-        
-        .dark-mode-toggle:hover {
-            background: var(--accent-color);
-            transform: translateY(-3px);
-        }
-        
-        /* Light mode styles */
-        body.light-mode {
-            background-color: #f5f5f5;
-            color: #333333;
-        }
-        
-        body.light-mode header {
-            background-color: #ffffff;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        body.light-mode .logo,
-        body.light-mode .nav-links a {
-            color: #333333;
-        }
-        
-        body.light-mode .nav-links a.active {
-            color: var(--primary-color);
-        }
-        
-        body.light-mode .hero-section {
-            background-color: #f5f5f5;
-        }
-        
-        body.light-mode .hero-section h1 {
-            color: #333333;
-        }
-        
-        body.light-mode .hero-section p {
-            color: #666666;
-        }
-        
-        body.light-mode .philosophy-section {
-            background-color: #ffffff;
-        }
-        
-        body.light-mode .philosophy-content p {
-            color: #666666;
-        }
-        
-        body.light-mode .courses-section {
-            background-color: #f5f5f5;
-        }
-        
-        body.light-mode .section-title p {
-            color: #666666;
-        }
-        
-        body.light-mode .tab-button {
-            color: #666666;
-        }
-        
-        body.light-mode .course-card {
-            background-color: #ffffff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        body.light-mode .course-description,
-        body.light-mode .course-details ul li {
-            color: #666666;
-        }
-        
-        body.light-mode .approach-section {
-            background-color: #ffffff;
-        }
-        
-        body.light-mode .approach-card {
-            background-color: #f9f9f9;
-        }
-        
-        body.light-mode .approach-card p {
-            color: #666666;
-        }
-        
-        body.light-mode .experience-section {
-            background-color: #f5f5f5;
-        }
-        
-        body.light-mode .timeline-content {
-            background-color: #ffffff;
-        }
-        
-        body.light-mode .timeline-content ul li {
-            color: #666666;
-        }
-        
-        body.light-mode .timeline::before {
-            background-color: var(--primary-color);
-        }
-        
-        body.light-mode .resources-section {
-            background-color: #ffffff;
-        }
-        
-        body.light-mode .resource-card {
-            background-color: #f9f9f9;
-        }
-        
-        body.light-mode .resource-description {
-            color: #666666;
-        }
-        
-        body.light-mode .contact-section {
-            background-color: #f5f5f5;
-        }
-        
-        body.light-mode .office-hours {
-            background-color: #ffffff;
-        }
-        
-        body.light-mode .office-hours p {
-            color: #666666;
-        }
-        
-        body.light-mode .contact-option {
-            background-color: #ffffff;
-        }
-        
-        body.light-mode .contact-option p:last-child {
-            color: #666666;
-        }
-        
-        /* Set default to dark mode */
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Connect With Me</h2>
-                <p>Support available for current and prospective students</p>
-            </div>
-
-            <div class="office-hours">
-                <h3>Office Hours</h3>
-                <p>I welcome students to visit during scheduled office hours for course assistance, research advice, or career guidance. No appointment is necessary during these times.</p>
-                
-                <div class="hours-grid">
-                    <div class="hours-item">
-                        <p class="day">Monday</p>
-                        <p>2:00 PM - 4:00 PM</p>
-                    </div>
-                    <div class="hours-item">
-                        <p class="day">Wednesday</p>
-                        <p>1:00 PM - 3:00 PM</p>
-                    </div>
-                    <div class="hours-item">
-                        <p class="day">Thursday</p>
-                        <p>9:00 AM - 11:00 AM</p>
-                    </div>
-                </div>
-                
-                <p style="margin-top: 20px;">For meetings outside these hours, please request an appointment via email.</p>
-            </div>
-
-            <div class="contact-options">
-                <div class="contact-option">
-                    <i class="far fa-envelope"></i>
-                    <div>
-                        <p>Email</p>
-                        <p>esahr37@gmail.com</p>
-                    </div>
-                </div>
-                
-                <div class="contact-option">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <p>Office Location</p>
-                        <p>Science Building, Room 205</p>
-                    </div>
-                </div>
-                
-                <div class="contact-option">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <p>Phone</p>
-                        <p>+231 881 650 202</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <div class="footer-section">
-                    <h3>Sahr Emmanuel</h3>
-                    <p>Lecturer, Researcher, Environmental Specialist</p>
-                    <p>University of Liberia & Environmental Protection Agency</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="teaching.html"><i class="fas fa-chevron-right"></i> Teaching</a></li>
-                        <li><a href="research.html"><i class="fas fa-chevron-right"></i> Research</a></li>
-                        <li><a href="epa-work.html"><i class="fas fa-chevron-right"></i> EPA Work</a></li>
-                        <li><a href="faith.html"><i class="fas fa-chevron-right"></i> Faith</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <p><i class="far fa-envelope"></i> Email: esahr37@gmail.com</p>
-                    <p><i class="fas fa-phone-alt"></i> Phone: +231 881 650 202</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Office: University of Liberia, Monrovia</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <div class="social-links">
-                        <a href="https://web.facebook.com/emmanuel.kingston.167" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/in/sahr-emmanuel-005758196/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/kingston.85/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Sahr Emmanuel. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                menuToggle.innerHTML = '<i class="fas fa-times"></i>';
-            } else {
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-        
-        // Tab functionality for courses
-        function openTab(evt, tabName) {
-            const tabContents = document.getElementsByClassName('tab-content');
-            for (let i = 0; i < tabContents.length; i++) {
-                tabContents[i].style.display = 'none';
-            }
-            
-            const tabButtons = document.getElementsByClassName('tab-button');
-            for (let i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].classList.remove('active');
-            }
-            
-            document.getElementById(tabName).style.display = 'block';
-            evt.currentTarget.classList.add('active');
-        }
-        
-        // Make first tab active by default
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('spring2025').style.display = 'block';
-            
-            // Check for URL parameters to open specific tab
-            const urlParams = new URLSearchParams(window.location.search);
-            const tabParam = urlParams.get('tab');
-            if (tabParam) {
-                const tabElement = document.getElementById(tabParam);
-                if (tabElement) {
-                    openTab({ currentTarget: document.querySelector(`[onclick="openTab(event, '${tabParam}')"]`) }, tabParam);
-                }
-            }
-        });
-    </script>
-</body>
-</html>    <!-- Teaching Approach Section -->
-    <section class="approach-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Teaching Approach</h2>
-                <p>Pedagogical methods that guide my educational practice</p>
-            </div>
-
-            <div class="approach-grid">
-                <div class="approach-card">
-                    <i class="fas fa-hands"></i>
-                    <h3>Experiential Learning</h3>
-                    <p>I believe students learn best by doing. My courses incorporate field work, laboratory experiments, and real-world projects that allow students to apply theoretical knowledge to practical challenges. These hands-on experiences develop technical skills while reinforcing conceptual understanding.</p>
-                </div>
-
-                <div class="approach-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Collaborative Learning</h3>
-                    <p>Environmental challenges require interdisciplinary teams and diverse perspectives. I structure group projects and discussions to help students develop collaboration skills, learn from each other's experiences, and practice consensus building—essential skills for future environmental professionals.</p>
-                </div>
-
-                <div class="approach-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Problem-Based Learning</h3>
-                    <p>My courses are structured around real environmental challenges facing Liberia and West Africa. By tackling authentic problems, students develop critical thinking skills, learn to integrate knowledge from multiple disciplines, and become more engaged with course material.</p>
-                </div>
-
-                <div class="approach-card">
-                    <i class="fas fa-globe-africa"></i>
-                    <h3>Local Context Integration</h3>
-                    <p>I emphasize the importance of local ecological knowledge, community perspectives, and cultural values in environmental management. My courses incorporate case studies from Liberia and invite community experts to share their insights, ensuring that classroom learning is relevant to local realities.</p>
-                </div>
-
-                <div class="approach-card">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Active Learning</h3>
-                    <p>I minimize traditional lecture formats in favor of interactive activities that engage students as active participants in the learning process. Discussions, debates, case analyses, and student presentations develop communication skills and deeper understanding of complex concepts.</p>
-                </div>
-
-                <div class="approach-card">
-                    <i class="fas fa-seedling"></i>
-                    <h3>Growth Mindset</h3>
-                    <p>I create a supportive classroom environment that encourages intellectual risk-taking and views mistakes as learning opportunities. Regular formative assessments and constructive feedback help students track their progress and continuously improve throughout the course.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Teaching Experience Section -->
-    <section class="experience-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Teaching Experience</h2>
-                <p>My journey as an educator in environmental science</p>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="date"><i class="fas fa-calendar-alt"></i> 2023 - Present</span>
-                        <h3>Assistant Professor</h3>
-                        <h4>University of Liberia, Department of Environmental Science</h4>
-                        <ul>
-                            <li>Teaching core environmental science courses and specialized electives</li>
-                            <li>Developing curriculum for new concentration in Environmental Remediation</li>
-                            <li>Supervising undergraduate research projects</li>
-                            <li>Serving on departmental curriculum committee</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="date"><i class="fas fa-calendar-alt"></i> 2021 - 2023</span>
-                        <h3>Lecturer</h3>
-                        <h4>University of Liberia, Department of Environmental Science</h4>
-                        <ul>
-                            <li>Taught Introduction to Environmental Science, Soil Science, and Waste Management courses</li>
-                            <li>Developed laboratory curriculum for Environmental Field Methods</li>
-                            <li>Organized field trips to environmental remediation sites</li>
-                            <li>Mentored student environmental club activities</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="date"><i class="fas fa-calendar-alt"></i> 2020 - 2021</span>
-                        <h3>Adjunct Instructor</h3>
-                        <h4>Stella Maris Polytechnic, Environmental Technology Program</h4>
-                        <ul>
-                            <li>Taught Environmental Monitoring and Field Sampling Techniques</li>
-                            <li>Conducted practical training in water and soil quality assessment</li>
-                            <li>Developed case studies based on local environmental challenges</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="date"><i class="fas fa-calendar-alt"></i> 2019 - 2020</span>
-                        <h3>Teaching Assistant</h3>
-                        <h4>Michigan State University, Department of Environmental Sciences</h4>
-                        <ul>
-                            <li>Assisted with undergraduate courses in Environmental Chemistry</li>
-                            <li>Led laboratory sessions and tutorial groups</li>
-                            <li>Graded assignments and provided student feedback</li>
-                            <li>Developed educational materials for soil contamination modules</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Student Resources Section -->
-    <section class="resources-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Student Resources</h2>
-                <p>Tools and materials to support your academic success</p>
-            </div>
-
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="resource-content">
-                        <h3 class="resource-title">Reading Materials</h3>
-                        <p class="resource-description">Access essential textbooks, journal articles, and reading lists for all my courses. Resources include both traditional academic sources and Liberia-specific environmental literature to provide global and local perspectives.</p>
-                        <div class="resource-link">
-                            <a href="#" class="btn">Access Library</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <div class="resource-content">
-                        <h3 class="resource-title">Laboratory Guides</h3>
-                        <p class="resource-description">Comprehensive laboratory manuals, safety guidelines, and analytical procedures for environmental sampling and analysis. These guides include step-by-step protocols and troubleshooting tips for field and lab work.</p>
-                        <div class="resource-link">
-                            <a href="#" class="btn">View Guides</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="resource-content">
-                        <h3 class="resource-title">Writing Resources</h3>
-                        <p class="resource-description">Guidelines for scientific writing, citation styles, and research paper structure. Includes templates for lab reports, research proposals, and final projects, as well as examples of high-quality student work.</p>
-                        <div class="resource-link">
-                            <a href="#" class="btn">Download Resources</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-laptop"></i>
-                    </div>
-                    <div class="resource-content">
-                        <h3 class="resource-title">Data Analysis Tools</h3>
-                        <p class="resource-description">Access to software, spreadsheet templates, and tutorials for environmental data analysis. Resources include guides for statistical analysis, GIS applications, and data visualization techniques relevant to course projects.</p>
-                        <div class="resource-link">
-                            <a href="#" class="btn">Access Tools</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-map-marked-alt"></i>
-                    </div>
-                    <div class="resource-content">
-                        <h3 class="resource-title">Field Study Resources</h3>
-                        <p class="resource-description">Maps, field guides, and equipment checklists for environmental field work in Liberia. Includes information on important study sites, safety protocols, and guidelines for responsible field research practices.</p>
-                        <div class="resource-link">
-                            <a href="#" class="btn">View Resources</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resource-card">
-                    <div class="resource-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="resource-content">
-                        <h3 class="resource-title">Career Development</h3>
-                        <p class="resource-description">Information on internships, research opportunities, and career paths in environmental science. Includes resume templates, interview tips, and profiles of alumni working in various environmental sectors.</p>
-                        <div class="resource-link">
-                            <a href="#" class="btn">Explore Opportunities</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->                    <p class="course-description">This course examines the chemical processes occurring in soils and their influence on plant growth, water quality, nutrient cycling, and contaminant behavior. Special emphasis is placed on soil remediation techniques and the management of contaminated sites in tropical environments.</p>
-                    
-                    <div class="course-details">
-                        <h4>Learning Objectives</h4>
-                        <ul>
-                            <li>Understand fundamental soil chemical properties and processes</li>
-                            <li>Analyze the behavior of nutrients and contaminants in soil systems</li>
-                            <li>Apply appropriate sampling and analytical techniques for soil assessment</li>
-                            <li>Evaluate soil remediation strategies for various types of contamination</li>
-                            <li>Develop management plans for contaminated soil in Liberian contexts</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="course-details">
-                        <h4>Course Structure</h4>
-                        <ul>
-                            <li>Lectures: Mondays and Wednesdays, 10:00 AM - 11:30 AM</li>
-                            <li>Laboratory: Fridays, 2:00 PM - 5:00 PM</li>
-                            <li>Field Trip: Two Saturday excursions to local sites (dates TBA)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="course-resources">
-                        <a href="#"><i class="fas fa-file-pdf"></i> Syllabus</a>
-                        <a href="#"><i class="fas fa-book"></i> Reading List</a>
-                        <a href="#"><i class="fas fa-flask"></i> Lab Manual</a>
-                        <a href="#"><i class="fas fa-tasks"></i> Assignment Schedule</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-header">
-                        <h3 class="course-title">Sustainable Development Principles</h3>
-                        <p class="course-code">ENV 410</p>
-                    </div>
-                    <p class="course-description">This course explores the principles and practices of sustainable development, with a focus on balancing environmental, social, and economic considerations. Students examine sustainable development challenges and opportunities in the West African context, analyzing case studies and developing practical solutions.</p>
-                    
-                    <div class="course-details">
-                        <h4>Learning Objectives</h4>
-                        <ul>
-                            <li>Understand core concepts and frameworks of sustainable development</li>
-                            <li>Analyze the interconnections between environmental protection, social equity, and economic development</li>
-                            <li>Evaluate the application of sustainable development principles in various sectors</li>
-                            <li>Develop strategies for addressing sustainability challenges in Liberia</li>
-                            <li>Create and communicate persuasive arguments for sustainable policies and practices</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="course-details">
-                        <h4>Course Structure</h4>
-                        <ul>
-                            <li>Lectures: Tuesdays and Thursdays, 1:00 PM - 2:30 PM</li>
-                            <li>Discussion Section: Wednesdays, 3:00 PM - 4:00 PM</li>
-                            <li>Community Project: Group-based semester-long project</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="course-resources">
-                        <a href="#"><i class="fas fa-file-pdf"></i> Syllabus</a>
-                        <a href="#"><i class="fas fa-book"></i> Reading List</a>
-                        <a href="#"><i class="fas fa-project-diagram"></i> Project Guidelines</a>
-                        <a href="#"><i class="fas fa-file-powerpoint"></i> Lecture Slides</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fall 2024 Tab -->
-            <div id="fall2024" class="tab-content">
-                <div class="course-card">
-                    <div class="course-header">
-                        <h3 class="course-title">Introduction to Environmental Science</h3>
-                        <p class="course-code">ENV 101</p>
-                    </div>
-                    <p class="course-description">This foundational course introduces students to the interdisciplinary field of environmental science, examining the structure and function of natural systems and how they are influenced by human activities. The course provides a solid scientific basis for understanding contemporary environmental issues.</p>
-                    
-                    <div class="course-details">
-                        <h4>Learning Objectives</h4>
-                        <ul>
-                            <li>Understand basic principles of ecology and earth system science</li>
-                            <li>Identify major environmental challenges and their scientific foundations</li>
-                            <li>Analyze human impacts on natural systems</li>
-                            <li>Apply scientific methods to investigate environmental questions</li>
-                            <li>Develop critical thinking skills for evaluating environmental information</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="course-details">
-                        <h4>Course Structure</h4>
-                        <ul>
-                            <li>Lectures: Mondays and Wednesdays, 9:00 AM - 10:30 AM</li>
-                            <li>Laboratory: Thursdays, 2:00 PM - 4:00 PM</li>
-                            <li>Field Trip: One Saturday excursion (date TBA)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="course-resources">
-                        <a href="#"><i class="fas fa-file-pdf"></i> Syllabus</a>
-                        <a href="#"><i class="fas fa-book"></i> Reading List</a>
-                        <a href="#"><i class="fas fa-flask"></i> Lab Manual</a>
-                        <a href="#"><i class="fas fa-tasks"></i> Study Guides</a>
-                    </div>
-                </div>
-
-                <div class="course-card">
-                    <div class="course-header">
-                        <h3 class="course-title">Waste Management Systems</h3>
-                        <p class="course-code">ENV 320</p>
-                    </div>
-                    <p class="course-description">This course explores integrated approaches to waste management, covering waste characterization, collection systems, treatment technologies, and final disposal methods. Students examine waste management challenges in Liberia and develop sustainable waste management solutions for urban and rural contexts.</p>
-                    
-                    <div class="course-details">
-                        <h4>Learning Objectives</h4>
-                        <ul>
-                            <li>Understand waste classification systems and characterization methods</li>
-                            <li>Analyze waste generation patterns and management challenges in developing countries</li>
-                            <li>Evaluate appropriate waste collection, processing, and disposal technologies</li>
-                            <li>Design integrated waste management systems for different contexts</li>
-                            <li>Develop strategies for reducing waste through circular economy approaches</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="course-details">
-                        <h4>Course Structure</h4>
-                        <ul>
-                            <li>Lectures: Tuesdays and Thursdays, 11:00 AM - 12:30 PM</li>
-                            <li>Site Visits: Two Friday field visits to waste management facilities</li>
-                            <li>Group Project: Community waste assessment and management plan</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="course-resources">
-                        <a href="#"><i class="fas fa-file-pdf"></i> Syllabus</a>
-                        <a href="#"><i class="fas fa-book"></i> Reading List</a>
-                        <a href="#"><i class="fas fa-clipboard-list"></i> Assessment Guidelines</a>
-                        <a href="#"><i class="fas fa-file-powerpoint"></i> Lecture Slides</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Summer 2024 Tab -->
-            <div id="summer2024" class="tab-content">
-                <div class="course-card">
-                    <div class="course-header">
-                        <h3 class="course-title">Field Methods in Environmental Science</h3>
-                        <p class="course-code">ENV 245</p>
-                    </div>
-                    <p class="course-description">This intensive field course provides hands-on training in environmental monitoring and assessment techniques. Students develop practical skills in sample collection, field analysis, data management, and quality assurance while conducting environmental assessments in diverse ecosystems around Monrovia.</p>
-                    
-                    <div class="course-details">
-                        <h4>Learning Objectives</h4>
-                        <ul>
-                            <li>Master fundamental field sampling techniques for various environmental media</li>
-                            <li>Operate common field monitoring equipment and portable analytical tools</li>
-                            <li>Implement proper sample handling, preservation, and chain-of-custody procedures</li>
-                            <li>Apply appropriate quality assurance and quality control measures</li>
-                            <li>Interpret field data and recognize potential sources of error</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="course-details">
-                        <h4>Course Structure</h4>
-                        <ul>
-                            <li>Field Sessions: Monday through Thursday, 8:00 AM - 3:00 PM</li>
-                            <li>Laboratory Analysis: Fridays, 9:00 AM - 12:00 PM</li>
-                            <li>Data Analysis Workshop: Fridays, 1:00 PM - 4:00 PM</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="course-resources">
-                        <a href="#"><i class="fas fa-file-pdf"></i> Syllabus</a>
-                        <a href="#"><i class="fas fa-clipboard-check"></i> Field Manual</a>
-                        <a href="#"><i class="fas fa-map-marked-alt"></i> Site Maps</a>
-                        <a href="#"><i class="fas fa-table"></i> Data Sheets</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Teaching Approach Section --><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Teaching | Sahr Emmanuel</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Academic teaching philosophy and courses by Sahr Emmanuel, focusing on environmental science and sustainable development at the University of Liberia.">
-    <meta name="keywords" content="Sahr Emmanuel, Teaching, Environmental Science, Sustainable Development, University of Liberia, Academic Courses">
-    
-    <!-- FAVICON CODE -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <meta name="theme-color" content="#2c6e49">
-    <meta name="msapplication-TileColor" content="#2c6e49">
-    <meta name="msapplication-config" content="favicon/browserconfig.xml">
-    <!-- END FAVICON CODE -->
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #2c6e49;
-            --accent-color: #d68c45;
-            --text-color: #ffffff;
-            --secondary-text: rgba(255, 255, 255, 0.7);
-            --bg-color: #121212;
-            --bg-secondary: #1e1e1e;
-            --bg-card: #252525;
-            --section-padding: 80px 0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent-color);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent-color);
-        }
-        
-        /* Header Styles */
-        header {
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: var(--bg-color);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-color);
-        }
-        
-        .logo i {
-            color: var(--primary-color);
-            margin-right: 8px;
-            font-size: 1.4rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            align-items: center;
-        }
-        
-        .nav-links li {
-            list-style: none;
-            margin-left: 25px;
-        }
-        
-        .nav-links a {
-            color: var(--text-color);
-            font-weight: 500;
-            position: relative;
-            padding-bottom: 5px;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .nav-links a.active {
-            color: var(--primary-color);
-        }
-        
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            padding-top: 150px;
-            padding-bottom: 80px;
-            text-align: center;
-            background-color: var(--bg-color);
-            position: relative;
-        }
-        
-        .hero-section h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-        
-        .hero-section h1::after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 3px;
-            background-color: var(--accent-color);
-            margin: 15px auto 0;
-        }
-        
-        .hero-section p {
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--secondary-text);
-            font-size: 1.1rem;
-        }
-        
-        /* Philosophy Section */
-        .philosophy-section {
-            padding: var(--section-padding);
-            background-color: var(--bg-secondary);
-        }
-        
-        .philosophy-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .philosophy-image {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .philosophy-image img {
-            width: 100%;
-            display: block;
-            border-radius: 8px;
-        }
-        
-        .philosophy-content h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .philosophy-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        
-        .philosophy-content p {
-            margin-bottom: 20px;
-            color: var(--secondary-text);
-            line-height: 1.8;
-        }
-        
-        /* Courses Section */
-        .courses-section {
-            padding: var(--section-padding);
-            background-color: var(--bg-color);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 70%;
-            height: 3px;
-            background-color: var(--accent-color);
-            bottom: -10px;
-            left: 15%;
-        }
-        
-        .section-title p {
-            color: var(--secondary-text);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .courses-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .tab-button {
-            background-color: transparent;
-            border: none;
-            color: var(--secondary-text);
-            padding: 10px 20px;
-            margin: 0 10px 10px;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            position: relative;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-button::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: width 0.3s ease;
-        }
-        
-        .tab-button:hover {
-            color: var(--text-color);
-        }
-        
-        .tab-button:hover::after {
-            width: 50%;
-        }
-        
-        .tab-button.active {
-            color: var(--primary-color);
-        }
-        
-        .tab-button.active::after {
-            width: 50%;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .course-card {
-            background-color: var(--bg-card);
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .course-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .course-header {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .course-title {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-        
-        .course-code {
-            color: var(--accent-color);
-            font-weight: 500;
-        }
-        
-        .course-description {
-            margin-bottom: 20px;
-            color: var(--secondary-text);
-        }
-        
-        .course-details h4 {
-            color: var(--text-color);
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 15px;
-            display: inline-block;
-        }
-        
-        .course-details h4::before {
-            content: '';
-            position: absolute;
-            width: 3px;
-            height: 100%;
-            background-color: var(--primary-color);
-            left: 0;
-            top: 0;
-        }
-        
-        .course-details {
-            margin-bottom: 25px;
-        }
-        
-        .course-details ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .course-details ul li {
-            margin-bottom: 8px;
-            color: var(--secondary-text);
-            list-style-type: none;
-            position: relative;
-        }
-        
-        .course-details ul li::before {
-            content: '•';
-            color: var(--primary-color);
-            position: absolute;
-            left: -15px;
-        }
-        
-        .course-resources a {
-            display: inline-block;
-            padding: 8px 15px;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            background-color: rgba(44, 110, 73, 0.1);
-            border-radius: 4px;
-            color: var(--primary-color);
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .course-resources a:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .course-resources a i {
-            margin-right: 5px;
-        }
-        
-        /* Approach Section */
-        .approach-section {
-            padding: var(--section-padding);
-            background-color: var(--bg-secondary);
-        }
-        
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .approach-card {
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-        
-        .approach-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .approach-card i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .approach-card h3 {
-            font-size: 1.3rem;
-            color: var(--text-color);
-            margin-bottom: 15px;
-        }
-        
-        .approach-card p {
-            color: var(--secondary-text);
-        }
-        
-        /* Teaching Experience */
-        .experience-section {
-            padding: var(--section-padding);
-            background-color: var(--bg-color);
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-            margin-bottom: 30px;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-content {
-            padding: 25px;
-            background-color: var(--bg-card);
-            border-radius: 8px;
-            position: relative;
-        }
-        
-        .timeline-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .timeline-content h4 {
-            font-size: 1rem;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-            font-weight: 500;
-        }
-        
-        .timeline-content .date {
-            display: inline-block;
-            margin-bottom: 10px;
-            padding: 3px 10px;
-            background-color: rgba(44, 110, 73, 0.1);
-            color: var(--primary-color);
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-        
-        .timeline-content ul {
-            padding-left: 20px;
-        }
-        
-        .timeline-content ul li {
-            margin-bottom: 8px;
-            color: var(--secondary-text);
-        }
-        
-        /* Circle markers */
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background-color: var(--primary-color);
-            border: 4px solid var(--bg-color);
-            border-radius: 50%;
-            top: 20px;
-            z-index: 1;
-        }
-        
-        .timeline-item:nth-child(odd)::after {
-            right: -8px;
-        }
-        
-        .timeline-item:nth-child(even)::after {
-            left: -8px;
-        }
-        
-        /* Resources Section */
-        .resources-section {
-            padding: var(--section-padding);
-            background-color: var(--bg-secondary);
-        }
-        
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .resource-card {
-            background-color: var(--bg-card);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .resource-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .resource-icon {
-            background-color: var(--primary-color);
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        .resource-icon i {
-            font-size: 3rem;
-            color: white;
-        }
-        
-        .resource-content {
-            padding: 25px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .resource-title {
-            font-size: 1.2rem;
-            color: var(--text-color);
-            margin-bottom: 15px;
-        }
-        
-        .resource-description {
-            color: var(--secondary-text);
-            margin-bottom: 20px;
-            flex: 1;
-        }
-        
-        .resource-link {
-            margin-top: auto;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            padding: var(--section-padding);
-            background-color: var(--bg-color);
-        }
-        
-        .office-hours {
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        
-        .office-hours h3 {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .office-hours p {
-            color: var(--secondary-text);
-            margin-bottom: 20px;
-        }
-        
-        .hours-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .hours-item {
-            background-color: rgba(44, 110, 73, 0.1);
-            padding: 15px;
-            border-radius: 6px;
-        }
-        
-        .day {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-        
-        .contact-options {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .contact-option {
-            background-color: var(--bg-card);
-            padding: 20px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            width: 300px;
-        }
-        
-        .contact-option i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-right: 15px;
-        }
-        
-        .contact-option p:first-child {
-            font-weight: 600;
-            color: var(--text-color);
-            margin-bottom: 5px;
-        }
-        
-        .contact-option p:last-child {
-            color: var(--secondary-text);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--bg-secondary);
-            padding: 60px 0 20px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section h3 {
-            font-size: 1.2rem;
-            color: var(--text-color);
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-section h3::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 2px;
-            background-color: var(--primary-color);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .footer-section p {
-            color: var(--secondary-text);
-            margin-bottom: 10px;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: var(--secondary-text);
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-color);
-            transform: translateX(5px);
-        }
-        
-        .footer-links a i {
-            margin-right: 8px;
-            font-size: 0.8rem;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-color);
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-5px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--secondary-text);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .philosophy-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .philosophy-image {
-                order: -1;
-                margin-bottom: 30px;
-                max-width: 500px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.2rem;
-            }
-            
-            .timeline::before {
-                left: 40px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item::after {
-                left: 32px;
-            }
-            
-            .timeline-item:nth-child(odd)::after {
-                right: auto;
-            }
-            
-            .contact-options {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .contact-option {
-                width: 100%;
-                max-width: 350px;
-            }
-            
-            nav {
-                padding: 15px 0;
-            }
-            
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
-                z-index: 1001;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 250px;
-                height: 100vh;
-                background-color: var(--bg-secondary);
-                flex-direction: column;
-                justify-content: center;
-                padding: 50px 0;
-                transition: all 0.5s ease;
-                z-index: 1000;
-            }
-            
-            .nav-links.active {
-                right: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-section h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.6rem;
-            }
-            
-            .hours-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Mobile Navigation */
-        .menu-toggle {
-            display: none;
-            background: transparent;
-            border: none;
-            color: var(--text-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 250px;
-                height: 100vh;
-                background-color: var(--bg-secondary);
-                flex-direction: column;
-                padding: 80px 0;
-                transition: all 0.5s ease;
-                z-index: 999;
-            }
-            
-            .nav-links.active {
-                right: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-                text-align: center;
-            }
-            
-            .nav-links a.active::after {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Teaching | Sahr Emmanuel</title>
+  <meta name="description" content="Academic teaching philosophy and courses by Sahr Emmanuel, focusing on environmental science and sustainable development at the University of Liberia.">
+  <meta name="keywords" content="Sahr Emmanuel, Teaching, Environmental Science, Sustainable Development, University of Liberia, Academic Courses">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2c6e49;
+      --accent-color: #d68c45;
+      --text-color: #ffffff;
+      --secondary-text: rgba(255,255,255,0.7);
+      --bg-color: #121212;
+      --bg-secondary: #1e1e1e;
+      --bg-card: #252525;
+    }
+    body {
+      margin:0;
+      font-family:'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height:1.6;
+    }
+    a { text-decoration:none; color: var(--primary-color); }
+    a:hover { color: var(--accent-color); }
+    header { position:fixed; top:0; width:100%; background: var(--bg-color); z-index:1000; border-bottom:1px solid rgba(255,255,255,0.05); }
+    nav { display:flex; justify-content: space-between; align-items:center; padding:15px 20px; }
+    nav .logo { font-size:1.2rem; font-weight:600; display:flex; align-items:center; color: var(--text-color); }
+    nav .logo i { color: var(--primary-color); margin-right:8px; font-size:1.4rem; }
+    nav .nav-links { display:flex; list-style:none; }
+    nav .nav-links li { margin-left:25px; }
+    nav .nav-links a { color: var(--text-color); position:relative; padding-bottom:5px; }
+    nav .nav-links a.active, nav .nav-links a:hover { color: var(--primary-color); }
+    nav .nav-links a.active::after { content:''; position:absolute; left:0; bottom:-5px; width:100%; height:2px; background: var(--primary-color); }
+    .hero-section { padding-top:150px; padding-bottom:80px; text-align:center; }
+    .hero-section h1 { font-size:2.8rem; margin-bottom:15px; color: var(--text-color); }
+    .hero-section p { max-width:800px; margin: 0 auto; }
+    .section { padding:80px 20px; }
+    .section h2 { font-size:2rem; margin-bottom:20px; color: var(--primary-color); text-align:center; }
+    .section p { max-width:800px; margin:0 auto 20px; color: var(--secondary-text); }
+    .courses-tabs { text-align:center; margin-bottom:30px; }
+    .tab-button { background:none; border: none; color: var(--text-color); margin:0 10px; padding:10px 20px; cursor:pointer; border-bottom:2px solid transparent; font-weight:500;}
+    .tab-button.active, .tab-button:hover { color:var(--primary-color); border-color: var(--primary-color); }
+    .tab-content { display:none; }
+    .tab-content.active { display:block; }
+    .course-card { background: var(--bg-card); border-radius:6px; padding:20px; margin-bottom:20px; }
+    .course-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+    .course-title { font-size:1.2rem; font-weight:600; }
+    .course-code { font-size:0.9rem; color: var(--secondary-text); }
+    .contact-section { background: var(--bg-secondary); padding:80px 20px; text-align:center; }
+    .office-hours { background: var(--bg-card); padding:30px; border-radius:8px; margin-bottom:40px; }
+    .contact-option { display:flex; align-items:center; justify-content:center; background: var(--bg-card); padding:20px; border-radius:8px; margin-bottom:15px; max-width:350px; margin-left:auto; margin-right:auto; }
+    .contact-option i { margin-right:15px; font-size:1.5rem; color: var(--primary-color); }
+    footer { background: var(--bg-secondary); padding:40px 0; color: var(--secondary-text); }
+    footer .footer-container { display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto; padding:0 20px; }
+    footer h3 { color: var(--primary-color); margin-bottom:10px; }
+    footer ul { list-style:none; padding:0; }
+    footer li { margin-bottom:5px; }
+    footer li a { color: var(--secondary-text); }
+    footer .footer-bottom { text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); }
+    .dark-mode-toggle { position: fixed; right: 25px; top:100px; width:45px; height:45px; border-radius:50%; background: var(--primary-color); color: var(--text-color); display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer; z-index:1000; }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <i class="fas fa-leaf"></i> Sahr Emmanuel
-                </a>
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="teaching.html" class="active">Teaching</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="epa-work.html">EPA Work</a></li>
-                    <li><a href="faith.html">Faith</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+  <header>
+    <nav>
+      <a href="index.html" class="logo"><i class="fas fa-leaf"></i> Sahr Emmanuel</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="teaching.html" class="active">Teaching</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="epa-work.html">EPA Work</a></li>
+        <li><a href="faith.html">Faith</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero-section">
+    <h1>Academic Teaching</h1>
+    <p>Educating the next generation of environmental scientists and sustainable development professionals.</p>
+  </section>
+  <section class="section">
+    <h2>Teaching Philosophy</h2>
+    <p>My approach to teaching bridges theory and practice, empowering students to become change agents in their communities. I create an inclusive learning environment where students engage with complex environmental challenges through critical thinking and hands‑on experiences.</p>
+    <p>I emphasize the interdisciplinary nature of environmental science, helping students understand the interconnections between scientific, social, economic and ethical dimensions of environmental issues.</p>
+  </section>
+  <section class="section">
+    <h2>Current Courses</h2>
+    <div class="courses-tabs">
+      <button class="tab-button active" onclick="openTab(event, 'spring2025')">Spring 2025</button>
+      <button class="tab-button" onclick="openTab(event, 'fall2024')">Fall 2024</button>
+      <button class="tab-button" onclick="openTab(event, 'summer2024')">Summer 2024</button>
+    </div>
+    <div id="spring2025" class="tab-content active">
+      <div class="course-card">
+        <div class="course-header">
+          <h3 class="course-title">Environmental Soil Chemistry</h3>
+          <p class="course-code">ENV 305</p>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <h1>Academic Teaching</h1>
-            <p>Educating the next generation of environmental scientists and sustainable development professionals</p>
+        <p>This course examines the chemical processes occurring in soils and their influence on plant growth, water quality, nutrient cycling and contaminant behaviour.</p>
+      </div>
+    </div>
+    <div id="fall2024" class="tab-content">
+      <div class="course-card">
+        <div class="course-header">
+          <h3 class="course-title">Sustainable Water Resource Management</h3>
+          <p class="course-code">ENV 310</p>
         </div>
-    </section>
-
-    <!-- Philosophy Section -->
-    <section class="philosophy-section">
-        <div class="container philosophy-container">
-            <div class="philosophy-content">
-                <h2>Teaching Philosophy</h2>
-                <p>My approach to teaching is founded on the belief that environmental education must bridge theory and practice, empowering students to become change agents in their communities. I strive to create an inclusive learning environment where students actively engage with complex environmental challenges through critical thinking and hands-on experiences.</p>
-                
-                <p>In my classroom, I emphasize the interdisciplinary nature of environmental science, helping students understand the interconnections between scientific, social, economic, and ethical dimensions of environmental issues. This holistic approach is particularly important in the Liberian context, where sustainable development requires solutions that are both scientifically sound and culturally appropriate.</p>
-                
-                <p>I believe in the power of experiential learning, incorporating field trips, laboratory work, and community-based projects into my courses whenever possible. These experiences help students develop practical skills while also fostering a deeper connection to the environmental challenges facing their communities.</p>
-                
-                <p>As an educator, I am committed to mentoring students beyond the classroom, supporting their research interests and professional development. I find particular fulfillment in helping students discover their own passions within the broad field of environmental science and guiding them toward meaningful careers that contribute to Liberia's sustainable future.</p>
-            </div>
-            <div class="philosophy-image">
-                <img src="images/teaching-philosophy.jpg" alt="Teaching in the classroom">
-            </div>
+        <p>Explore principles of water resource management and the impact of climate change on hydrological systems, with emphasis on sustainable solutions for Liberia.</p>
+      </div>
+    </div>
+    <div id="summer2024" class="tab-content">
+      <div class="course-card">
+        <div class="course-header">
+          <h3 class="course-title">Environmental Impact Assessment</h3>
+          <p class="course-code">ENV 220</p>
         </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section class="courses-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Current Courses</h2>
-                <p>Courses I am teaching at the University of Liberia</p>
-            </div>
-
-            <div class="courses-tabs">
-                <button class="tab-button active" onclick="openTab(event, 'spring2025')">Spring 2025</button>
-                <button class="tab-button" onclick="openTab(event, 'fall2024')">Fall 2024</button>
-                <button class="tab-button" onclick="openTab(event, 'summer2024')">Summer 2024</button>
-            </div>
-
-            <!-- Spring 2025 Tab -->
-            <div id="spring2025" class="tab-content active">
-                <div class="course-card">
-                    <div class="course-header">
-                        <h3 class="course-title">Environmental Soil Chemistry</h3>
-                        <p class="course-code">ENV 305</p>
-                    </div>
-                    <p class="course-description">This course examines the chemical processes occurring in soils and their influence on plant growth, water quality, nutrient cycling, and contaminant behavior
+        <p>Students learn to evaluate environmental impacts of proposed projects, interpret regulatory frameworks and develop mitigation strategies.</p>
+      </div>
+    </div>
+  </section>
+  <section class="contact-section">
+    <h2>Connect With Me</h2>
+    <p>Support is available for current and prospective students.</p>
+    <div class="office-hours">
+      <h3>Office Hours</h3>
+      <p>Monday: 2:00 PM – 4:00 PM<br>
+         Wednesday: 1:00 PM – 3:00 PM<br>
+         Thursday: 9:00 AM – 11:00 AM
+      </p>
+      <p style="margin-top:20px;">For meetings outside these hours, please request an appointment via email.</p>
+    </div>
+    <div class="contact-option"><i class="far fa-envelope"></i><div><p>Email</p><p>esahr37@gmail.com</p></div></div>
+    <div class="contact-option"><i class="fas fa-map-marker-alt"></i><div><p>Office Location</p><p>Science Building, Room 205</p></div></div>
+    <div class="contact-option"><i class="fas fa-phone-alt"></i><div><p>Phone</p><p>+231 881 650 202</p></div></div>
+  </section>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Sahr Emmanuel</h3>
+        <p>Lecturer, Researcher, Environmental Specialist</p>
+        <p>University of Liberia & Environmental Protection Agency</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+          <li><a href="teaching.html"><i class="fas fa-chevron-right"></i> Teaching</a></li>
+          <li><a href="research.html"><i class="fas fa-chevron-right"></i> Research</a></li>
+          <li><a href="epa-work.html"><i class="fas fa-chevron-right"></i> EPA Work</a></li>
+          <li><a href="faith.html"><i class="fas fa-chevron-right"></i> Faith</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><i class="far fa-envelope"></i> Email: esahr37@gmail.com</p>
+        <p><i class="fas fa-phone-alt"></i> Phone: +231 881 650 202</p>
+        <p><i class="fas fa-map-marker-alt"></i> Office: University of Liberia, Monrovia</p>
+      </div>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="https://web.facebook.com/emmanuel.kingston.167" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/in/sahr-emmanuel-005758196/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/kingston.85/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sahr Emmanuel. All rights reserved.</p>
+    </div>
+  </footer>
+  <div class="dark-mode-toggle" id="dark-mode-toggle"><i class="fas fa-sun"></i></div>
+  <script>
+    function openTab(evt, tabName) {
+      const tabContents = document.getElementsByClassName('tab-content');
+      for (let i = 0; i < tabContents.length; i++) { tabContents[i].style.display = 'none'; tabContents[i].classList.remove('active'); }
+      const tabButtons = document.getElementsByClassName('tab-button');
+      for (let i = 0; i < tabButtons.length; i++) { tabButtons[i].classList.remove('active'); }
+      document.getElementById(tabName).style.display = 'block';
+      document.getElementById(tabName).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    if (localStorage.getItem('lightMode') === 'enabled') {
+      body.classList.add('light-mode');
+      darkModeToggle.innerHTML = '<i class=\"fas fa-moon\"></i>';
+    }
+    darkModeToggle.addEventListener('click', function() {
+      body.classList.toggle('light-mode');
+      if (body.classList.contains('light-mode')) {
+        localStorage.setItem('lightMode', 'enabled');
+        darkModeToggle.innerHTML = '<i class=\"fas fa-moon\"></i>';
+      } else {
+        localStorage.setItem('lightMode', 'disabled');
+        darkModeToggle.innerHTML = '<i class=\"fas fa-sun\"></i>';
+      }
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('spring2025').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
