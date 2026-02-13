@@ -9,63 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #2c6e49;
-      --accent-color: #d68c45;
-      --text-color: #ffffff;
-      --secondary-text: rgba(255,255,255,0.7);
-      --bg-color: #121212;
-      --bg-secondary: #1e1e1e;
-      --bg-card: #252525;
-    }
-    body {
-      margin:0;
-      font-family:'Poppins', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height:1.6;
-    }
-    a { text-decoration:none; color: var(--primary-color); }
-    a:hover { color: var(--accent-color); }
-    header { position:fixed; top:0; width:100%; background: var(--bg-color); z-index:1000; border-bottom:1px solid rgba(255,255,255,0.05); }
-    nav { display:flex; justify-content: space-between; align-items:center; padding:15px 20px; }
-    nav .logo { font-size:1.2rem; font-weight:600; display:flex; align-items:center; color: var(--text-color); }
-    nav .logo i { color: var(--primary-color); margin-right:8px; font-size:1.4rem; }
-    nav .nav-links { display:flex; list-style:none; }
-    nav .nav-links li { margin-left:25px; }
-    nav .nav-links a { color: var(--text-color); position:relative; padding-bottom:5px; }
-    nav .nav-links a.active, nav .nav-links a:hover { color: var(--primary-color); }
-    nav .nav-links a.active::after { content:''; position:absolute; left:0; bottom:-5px; width:100%; height:2px; background: var(--primary-color); }
-    .hero-section { padding-top:150px; padding-bottom:80px; text-align:center; }
-    .hero-section h1 { font-size:2.8rem; margin-bottom:15px; color: var(--text-color); }
-    .hero-section p { max-width:800px; margin: 0 auto; }
-    .section { padding:80px 20px; }
-    .section h2 { font-size:2rem; margin-bottom:20px; color: var(--primary-color); text-align:center; }
-    .section p { max-width:800px; margin:0 auto 20px; color: var(--secondary-text); }
-    .courses-tabs { text-align:center; margin-bottom:30px; }
-    .tab-button { background:none; border: none; color: var(--text-color); margin:0 10px; padding:10px 20px; cursor:pointer; border-bottom:2px solid transparent; font-weight:500;}
-    .tab-button.active, .tab-button:hover { color:var(--primary-color); border-color: var(--primary-color); }
-    .tab-content { display:none; }
-    .tab-content.active { display:block; }
-    .course-card { background: var(--bg-card); border-radius:6px; padding:20px; margin-bottom:20px; }
-    .course-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-    .course-title { font-size:1.2rem; font-weight:600; }
-    .course-code { font-size:0.9rem; color: var(--secondary-text); }
-    .contact-section { background: var(--bg-secondary); padding:80px 20px; text-align:center; }
-    .office-hours { background: var(--bg-card); padding:30px; border-radius:8px; margin-bottom:40px; }
-    .contact-option { display:flex; align-items:center; justify-content:center; background: var(--bg-card); padding:20px; border-radius:8px; margin-bottom:15px; max-width:350px; margin-left:auto; margin-right:auto; }
-    .contact-option i { margin-right:15px; font-size:1.5rem; color: var(--primary-color); }
-    footer { background: var(--bg-secondary); padding:40px 0; color: var(--secondary-text); }
-    footer .footer-container { display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto; padding:0 20px; }
-    footer h3 { color: var(--primary-color); margin-bottom:10px; }
-    footer ul { list-style:none; padding:0; }
-    footer li { margin-bottom:5px; }
-    footer li a { color: var(--secondary-text); }
-    footer .footer-bottom { text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); }
-    .dark-mode-toggle { position: fixed; right: 25px; top:100px; width:45px; height:45px; border-radius:50%; background: var(--primary-color); color: var(--text-color); display:flex; align-items:center; justify-content:center; font-size:1.2rem; cursor:pointer; z-index:1000; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <!-- External CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
   <header>
@@ -180,35 +126,6 @@
     </div>
   </footer>
   <div class="dark-mode-toggle" id="dark-mode-toggle"><i class="fas fa-sun"></i></div>
-  <script>
-    function openTab(evt, tabName) {
-      const tabContents = document.getElementsByClassName('tab-content');
-      for (let i = 0; i < tabContents.length; i++) { tabContents[i].style.display = 'none'; tabContents[i].classList.remove('active'); }
-      const tabButtons = document.getElementsByClassName('tab-button');
-      for (let i = 0; i < tabButtons.length; i++) { tabButtons[i].classList.remove('active'); }
-      document.getElementById(tabName).style.display = 'block';
-      document.getElementById(tabName).classList.add('active');
-      evt.currentTarget.classList.add('active');
-    }
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-    if (localStorage.getItem('lightMode') === 'enabled') {
-      body.classList.add('light-mode');
-      darkModeToggle.innerHTML = '<i class=\"fas fa-moon\"></i>';
-    }
-    darkModeToggle.addEventListener('click', function() {
-      body.classList.toggle('light-mode');
-      if (body.classList.contains('light-mode')) {
-        localStorage.setItem('lightMode', 'enabled');
-        darkModeToggle.innerHTML = '<i class=\"fas fa-moon\"></i>';
-      } else {
-        localStorage.setItem('lightMode', 'disabled');
-        darkModeToggle.innerHTML = '<i class=\"fas fa-sun\"></i>';
-      }
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('spring2025').style.display = 'block';
-    });
-  </script>
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
