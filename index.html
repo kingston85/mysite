@@ -31,8 +31,8 @@
     <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="favicon/site.webmanifest">
-    <meta name="theme-color" content="#2c6e49">
-    <meta name="msapplication-TileColor" content="#2c6e49">
+    <meta name="theme-color" content="#0A7373">
+    <meta name="msapplication-TileColor" content="#0A7373">
     <meta name="msapplication-config" content="favicon/browserconfig.xml">
     <!-- END FAVICON CODE -->
     
@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- External CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
@@ -66,62 +66,66 @@
                     <li><a href="pages/dashboard.html">Dashboard</a></li>
                     <li><a href="pages/faith.html">Faith</a></li>
                     <li><a href="pages/contact.html">Contact</a></li>
+                    <li>
+                        <button class="dark-mode-toggle" id="dark-mode-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
                 </ul>
-                <!-- Dark mode toggle -->
-                <div class="dark-mode-toggle" id="dark-mode-toggle">
-                    <i class="fas fa-moon"></i>
-                </div>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container hero-container fade-in">
-            <div class="profile-img-container">
-                <img src="assets/images/profile.jpeg" alt="Sahr Emmanuel - Environmental Science Professional" class="profile-img" loading="lazy">
-            </div>
-            <p class="tagline">Environmental Scientist & Educator</p>
-            <h1>Sahr Emmanuel</h1>
-            <p class="roles">Lecturer of Sustainable Development & Environmental Soil Chemistry | EPA Chemical Remediation Analyst | Researcher</p>
-            <p class="intro">Results-driven Environmental Science and Engineering professional with expertise in carbon emission reduction, sustainable development, and environmental remediation. Committed to advancing sustainable solutions in Liberia and beyond.</p>
-            <div class="hero-btns">
-                <a href="pages/about.html" class="btn">Learn More</a>
-                <a href="pages/contact.html" class="btn btn-outline">Get In Touch</a>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-text slide-in-left">
+                    <p class="subtitle">Environmental Scientist & Educator</p>
+                    <h1>Sahr Emmanuel</h1>
+                    <p>Results-driven Environmental Science and Engineering professional with expertise in carbon emission reduction, sustainable development, and environmental remediation. Committed to advancing sustainable solutions in Liberia and beyond.</p>
+                    <div class="hero-buttons">
+                        <a href="pages/about.html" class="btn">Explore My Work</a>
+                        <a href="pages/contact.html" class="btn btn-outline">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image slide-in-right">
+                    <img src="assets/images/profile.jpeg" alt="Sahr Emmanuel - Environmental Science Professional" loading="lazy">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Featured Sections -->
-    <section class="featured-sections">
+    <section class="features-section">
         <div class="container">
-            <div class="section-heading slide-up">
+            <div class="section-title fade-in">
                 <h2>My Professional Focus</h2>
                 <p>Exploring the intersection of environmental science, education, and public service</p>
             </div>
-            <div class="cards">
-                <div class="card slide-up">
-                    <div class="card-img" style="background-image: url('assets/images/teaching-card.jpg');"></div>
-                    <div class="card-content">
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <img src="assets/images/teaching-card.jpg" alt="Academic Teaching" class="feature-image" loading="lazy">
+                    <div class="feature-content">
                         <h3><i class="fas fa-chalkboard-teacher"></i> Academic Teaching</h3>
                         <p>Inspiring the next generation of environmental scientists at the University of Liberia through rigorous curriculum and hands-on learning.</p>
-                        <a href="pages/teaching.html" class="btn">Explore Teaching</a>
+                        <a href="pages/teaching.html" class="feature-link">Explore Teaching <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="card slide-up">
-                    <div class="card-img" style="background-image: url('assets/images/research-card.jpg');"></div>
-                    <div class="card-content">
+                <div class="feature-card fade-in">
+                    <img src="assets/images/research-card.jpg" alt="Environmental Research" class="feature-image" loading="lazy">
+                    <div class="feature-content">
                         <h3><i class="fas fa-microscope"></i> Environmental Research</h3>
                         <p>Investigating sustainable solutions through life cycle assessment, waste management, and carbon emission reduction studies.</p>
-                        <a href="pages/research.html" class="btn">View Research</a>
+                        <a href="pages/research.html" class="feature-link">View Research <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="card slide-up">
-                    <div class="card-img" style="background-image: url('assets/images/epa-card.jpg');"></div>
-                    <div class="card-content">
+                <div class="feature-card fade-in">
+                    <img src="assets/images/epa-card.jpg" alt="EPA Contributions" class="feature-image" loading="lazy">
+                    <div class="feature-content">
                         <h3><i class="fas fa-leaf"></i> EPA Contributions</h3>
                         <p>Applying technical expertise as a Chemical Remediation Analyst to address environmental challenges in Liberia.</p>
-                        <a href="pages/epa-work.html" class="btn">EPA Projects</a>
+                        <a href="pages/epa-work.html" class="feature-link">EPA Projects <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -131,37 +135,37 @@
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
-            <div class="section-heading slide-up">
+            <div class="section-title fade-in">
                 <h2>Impact & Experience</h2>
                 <p>Measurable contributions to environmental science and education</p>
             </div>
-            <div class="stats-container">
-                <div class="stat-item">
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
                     <div class="stat-icon">
                         <i class="fas fa-file-alt"></i>
                     </div>
-                    <div class="stat-number">12+</div>
+                    <div class="stat-number" data-target="12">0</div>
                     <div class="stat-label">Research Publications</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-card fade-in">
                     <div class="stat-icon">
                         <i class="fas fa-user-graduate"></i>
                     </div>
-                    <div class="stat-number">200+</div>
+                    <div class="stat-number" data-target="200">0</div>
                     <div class="stat-label">Students Mentored</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-card fade-in">
                     <div class="stat-icon">
                         <i class="fas fa-project-diagram"></i>
                     </div>
-                    <div class="stat-number">15</div>
+                    <div class="stat-number" data-target="15">0</div>
                     <div class="stat-label">Environmental Projects</div>
                 </div>
-                <div class="stat-item">
+                <div class="stat-card fade-in">
                     <div class="stat-icon">
                         <i class="fas fa-globe-africa"></i>
                     </div>
-                    <div class="stat-number">8</div>
+                    <div class="stat-number" data-target="8">0</div>
                     <div class="stat-label">Years of Experience</div>
                 </div>
             </div>
